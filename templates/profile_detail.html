@@ -19,12 +19,17 @@
             <br> Interests: {{ profile.interests }}
             <br> Github: {{ profile.github }}
             <br><small><em>joined: {{ profile.joined }}</em></small>
-            </p>
-            
+            </p>   
+        </div>
+        <div>
+            <form>
+                <a href="" class="btn">Connect</a>
+                <a href="{{ url_for('members') }}" class="btn">Back to Members</a>
+            </form>
+        </div>
     </div>
-    </div>
-    </div>
-         
+</div>
+
           
            
 {% endblock %}
