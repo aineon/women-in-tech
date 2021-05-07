@@ -16,6 +16,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 # Renders home page
 @app.route("/")
 @app.route("/index")
@@ -28,6 +29,14 @@ def index():
 def members():
     profiles = list(mongo.db.profiles.find())
     return render_template("members.html", profiles=profiles)
+
+
+# Display full member profile
+@app.route("/profile_detail/<profile_id>")
+def profile_detail(profile_id):
+    profile = mongo.db.profiles.find_one({"_id": ObjectId(profile_id)})
+    return render_template("profile_detail.html",
+                           profile=profile)
 
 
 if __name__ == "__main__":

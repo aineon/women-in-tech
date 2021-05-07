@@ -22,7 +22,7 @@
                             <br> Technologies: {{ profile.technologies }}
                             </p>
               
-                        <a href="" class="btn">View Profile</a>
+                        <a href="{{ url_for('profile_detail', profile_id=profile._id) }}" class="btn">View Profile</a>
                         </div>
                    
                 </div>
