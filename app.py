@@ -23,6 +23,13 @@ def index():
     return render_template("index.html")
 
 
+# Displays all members in the db
+@app.route("/members")
+def members():
+    profiles = list(mongo.db.profiles.find())
+    return render_template("members.html", profiles=profiles)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
