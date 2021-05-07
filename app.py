@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -24,7 +25,19 @@ def index():
     return render_template("index.html")
 
 
-# Displays all members in the db
+# Register user in the db
+@app.route("/register")
+def register():
+    return render_template("register.html")
+
+
+# Log existing user into site
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+
+# Displays all member profiles in the db
 @app.route("/members")
 def members():
     profiles = list(mongo.db.profiles.find())
@@ -37,6 +50,33 @@ def profile_detail(profile_id):
     profile = mongo.db.profiles.find_one({"_id": ObjectId(profile_id)})
     return render_template("profile_detail.html",
                            profile=profile)
+
+
+# Add another member as a connection
+@app.route("/add_connection/<profile_id>", methods=["GET", "POST"])
+def add_connection(profile_id):
+    if request.method == "POST":
+        user = mongo.db.users.find_one({"username": session["user"].lower()})
+        connections = mongo.db.users.find_one(user)["connections"]
+        # if member is already connected
+        if ObjectId(profile_id) in connections:
+            flash("You are already connected!")
+            return redirect(url_for("members"))
+        # otherwise adds member to users connections
+        mongo.db.users.update_one(
+             user, {"$push": {
+                "connections": ObjectId(profile_id)}})
+        flash("You are now connected!")
+        return redirect(url_for("members"))
+
+
+# Logs user out of their account
+@app.route("/logout")
+def logout():
+    # remove user from session cookie
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
