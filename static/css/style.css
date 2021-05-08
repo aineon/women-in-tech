@@ -18,7 +18,7 @@ p{
     background-color: #f64a8a;
 }
 /*--Navigation bar--*/
-nav .bg-light{
+nav .bg-color-navbar{
     background-color: #ffe3ec;
 }
 button .navbar-toggler{
@@ -56,7 +56,7 @@ a:hover{
     align-items: center;
     background: url('../images/background-SignIn-page.jpg') no-repeat;
     background-size: cover;
-    height: 100%;
+    height: 80vh;
     opacity: 0.9;
     overflow: hidden;
     width: 100%;
@@ -69,8 +69,9 @@ a:hover{
     min-height: fit-content;
 }
 .form-heading{
-    padding-top: 30px;
+    padding-top: 70px;
     font-family: 'Amatic SC', cursive;
+    font-weight: 900;
 }
 input{
     box-shadow: 1px 1px 1px 1px grey;
