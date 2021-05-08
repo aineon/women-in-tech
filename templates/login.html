@@ -12,14 +12,14 @@
     
     <!-- Log In Form-->
         <div class="row form-container">
-            <form class="col-10 offset-1 col-md-6 offset-md-3" method="POST" action="">
+            <form class="col-10 offset-1 col-md-6 offset-md-3" method="POST" action="{{ url_for('login') }}">
                 <div class="row">
                     <div class="form-group col-12 col-md-6 offset-md-3 text-center">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control validate" id="username" name="username" required>
+                        <label for="username" class="d-none"></label>
+                        <input type="text" class="form-control validate" id="username" name="username" placeholder="Username"required>
                     </div>
                     <div class="form-group col-12 col-md-6 offset-md-3 text-center">
-                        <label for="password">Password</label>
+                        <label for="password" class="d-none"></label>
                         <input type="password" class="form-control validate" id="password" name="password" required>
                     </div>
                 </div>

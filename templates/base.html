@@ -31,7 +31,7 @@
             <a class="nav-link" href="{{ url_for('members') }}">Members</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('profile') }}">My Profile</a>
+            <a class="nav-link" href="{{ url_for('my_profile', username=session['user']) }}">My Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('login') }}">Sign In</a>
@@ -40,14 +40,28 @@
             <a class="nav-link" href="#">Sign Out</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign Up</a>
+            <a class="nav-link" href="{{ url_for('register') }}">Sign Up</a>
           </li>
         </ul>
       </div>
     </nav>
   </header>
 
-
+<!--Display Flash Messages-->
+<section> 
+  {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              {% for message in messages %}
+                  <div id="flashMessage{{loop.index}}" class="flash row">
+                       <div class="col s12 m6 offset-m3">
+                          <h4 class="center-align flash-message">{{ message }}</h4>
+                      </div>
+                  </div>
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+  </section>
+  
   {% block content %}
   {% endblock %}
 
