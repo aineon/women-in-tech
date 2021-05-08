@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Crafty+Girls&display=swap" rel="stylesheet">
   <link rel= "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-  <title>WitConnect</title>
+  <title>WITConnect</title>
 </head>
 
 <body>
@@ -37,7 +37,7 @@
             <a class="nav-link" href="{{ url_for('members') }}">Members</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">My Profile</a>
+            <a class="nav-link" href="{{ url_for('profile') }}">My Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('login') }}">Sign In</a>
@@ -103,7 +103,8 @@
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
   </script>
 
-
+{% block scripts %}
+{% endblock %}
 </body>
 
 </html>
