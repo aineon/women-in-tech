@@ -1,4 +1,69 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="tab-container">
+    <div class="row">
+        <div class="col-12">
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'profile')">My Profile</button>
+                <button class="tablinks" onclick="openTab(event, 'connections')">My Connections</button>
+                <button class="tablinks" onclick="openTab(event, 'update')">Update Profile</button>
+                <!-- <button class="tablinks" onclick="openTab(event, 'deactivate')">Deactivate Account</button> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div id="profile" class="tabcontent mb-3">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                            <div class="image-container ">
+                                <img class="card-img-top img-fluid" src="" alt="">
+                            </div>
+                        </div>
+                  
+                       {% for profile in profiles %} 
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="profile-info-container mb-5 mt-md-5">
+                                <h3 class="mb-0 font-weight-bold text-center">{{ profile.fullName }} </h3>
+                                <span class="text-muted">({{ profile.user_type }})</span></h5>
+                                <p class="mb-0">Field: {{ profile.field }}
+                                <br> Experience: {{ profile.experience }}
+                                <br> Technologies: {{ profile.technologies }}
+                                <br> Goals: {{ profile.goals }}
+                                <br> Interests: {{ profile.interests }}
+                                <br> Github: {{ profile.github }}
+                                </p>    
+                            </div>
+                            <a href="" class="btn">Update Profile</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>You haven't created a profile yet</h3>
+                        <a href="" class="btn">Create Profile</a>
+                    </div>
+                    {% endfor %}
+                  
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div id="connections" class="tabcontent mb-3">
+                <h3>My Connections</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div id="update" class="tabcontent mb-3">
+                <h3>Update Profile</h3>
+               
+            </div>
+        </div>
+    </div>
 {% endblock %}
