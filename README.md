@@ -1,52 +1,49 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Wit Connect
+## Overview
+The aim of this project is to give people who identify as women the chance to thrive in the world of coding. This is a networking site which provides a tool like a message chat to link and connect mentors and mentee. 
 
-Welcome aineon,
+## User Stories
+- "As a woman and a student I want to get in touch with a mentor who can help me coding"
+- "I want to create my personal profile as mentor or mentee"
+- "I want to join a social media community of women coders"
+- "I want to browse the website and look among the members"
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+### First time visitor goals
 
-## Gitpod Reminders
+- I expect to navigate the website easily with a user friendly navigation bar.
+- I want to know more about the mission and aim of this project.
+- I want to register and create my profile page.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Returning visitor goals
+- 
 
-`python3 -m http.server`
+### Frequent visitor goals
+- I want to develop a professional relationship with other women coders.
 
-A blue button should appear to click: _Make Public_,
+## Site owner goals
+- As women and students we wish to create an inclusive environment for all coders.
 
-Another blue button should appear to click: _Open Browser_.
+## Features
+### Existing Features
+- The navigation bar is fixed to the top of the page and brings the users to the different pages.
+- The logo is on the top left.
+- The footer is fixed to the bottom of the page and provides social media pages icons (GitHub, Twitter, Facebook, Instagram) and copyright info in the center.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+## Technologies Used
 
-Another blue button should appear to click: _Open Browser_.
+### Languages Used
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+1. HTML [HTML5](https://en.wikipedia.org/wiki/HTML5)
+2. CSS [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+3. PYTHON [PYTHON](https://www.python.org/)
 
-To log into the Heroku toolbelt CLI you can use:
+### Frameworks, Libraries and Integrations Used
 
-`heroku login -i`
+1. [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/) : was used to provide responsiveness on all device sizes and add some stylistic components.
+2. [FontAwesome](https://fontawesome.com/) : was used to add icons for social media links and for the little icons inside the buttons in the Explore section.
+3. [Google Fonts](https://fonts.google.com/) : was used to import typography fonts.
+4. [Balsamiq](https://balsamiq.com/) : was used to create wireframes during the design of the layout.
 
-If you have Multi-Factor Authentication (MFA) enabled then use the API key that was generated for you at [Heroku](https://dashboard.heroku.com/account) as your password.
-This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
 
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
----
-
-Happy coding!
+> **_NOTE:_** This is for educational purposes.
