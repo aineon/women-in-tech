@@ -13,9 +13,10 @@ p{
 .btn{
     border-color: black;
     margin-top: 10px;
+    background-color: #f64a8a;
 }
 .btn:hover{
-    background-color: #f64a8a;
+    background-color: #ffe3ec;
 }
 /*--Navigation bar--*/
 nav .bg-color-navbar{
@@ -57,7 +58,7 @@ a:hover{
     background: url('../images/background-SignIn-page.jpg') no-repeat;
     background-size: cover;
     height: 80vh;
-    opacity: 0.9;
+    opacity: 0.7;
     overflow: hidden;
     width: 100%;
     z-index: -1;
@@ -67,6 +68,7 @@ a:hover{
     min-height: -webkit-fit-content;
     min-height: -moz-fit-content;
     min-height: fit-content;
+    z-index: 1;
 }
 .form-heading{
     padding-top: 70px;
@@ -75,6 +77,9 @@ a:hover{
 }
 input{
     box-shadow: 1px 1px 1px 1px grey;
+}
+.account-login{
+    font-weight: 900;
 }
 /*--Footer--*/
 footer{
