@@ -3,7 +3,6 @@ from datetime import date
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
-from flask import Flask
 from flask_socketio import SocketIO, send
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -17,13 +16,14 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
-app.config["SOCKETIO_SECRET_KEY"] = os.environ.get("SOCKETIO_SECRET_KEY")
+# app.config["SOCKETIO_SECRET_KEY"] = os.environ.get("SOCKETIO_SECRET_KEY")
 
 
-socketio = SocketIO(app)
+# socketio = SocketIO(app)
 
 
 mongo = PyMongo(app)
+
 
 date = date.today()
 
@@ -97,7 +97,7 @@ def login():
             # username doesn't exist/is incorrect
             flash("Incorrect Usernname/Password")
             return redirect(url_for("login"))
-      
+  
     return render_template("login.html")
 
 
@@ -116,21 +116,30 @@ def profile_detail(profile_id):
                            profile=profile)
 
 
+# Add profile form
+@app.route("/add_profile")
+def add_profile():
+    return render_template("add_profile.html")
+
+
+# Update profile form
+@app.route("/update_profile")
+def update_profile():
+    return render_template("update_profile.html")
+
+
 # Display members personal profile page
 @app.route("/my_profile/<username>", methods=["GET", "POST"])
 def my_profile(username):
     # grab the session user's username from db
-    # username = mongo.db.users.find_one(
-    #     {"username": session["user"]})["username"]
-    # if session["user"]:
-    #     my_profile = mongo.db.profiles.find(
-    #             {"created_by": session["user"]})
-    #     user = mongo.db.users.find_one({"username": session["user"]})  
-    return render_template("profile.html",
-                           username=username)
-                        #    user=user,
-                        #    profiles=my_profile)
-
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    if session["user"]:
+        my_profile = mongo.db.profiles.find(
+                {"created_by": session["user"]})
+        user = mongo.db.users.find_one({"username": session["user"]}) 
+    return render_template("profile.html", username=username,
+                           user=user, profiles=my_profile)
 
 
 # Add another member as a connection
@@ -161,14 +170,14 @@ def logout():
 
 
 # Message chat feature
-@socketio.on('message')
-def handleChat(msg):
-    print("message" + msg)
-    send(msg, broadcast=True)
+# @socketio.on('message')
+# def handleChat(msg):
+#     print("message" + msg)
+#     send(msg, broadcast=True)
 
 
-if __name__ == "__main__":
-    socketio.run(app)
+# if __name__ == "__main__":
+#     socketio.run(app)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
