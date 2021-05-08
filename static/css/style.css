@@ -21,10 +21,22 @@ p{
 nav .bg-light{
     background-color: #ffe3ec;
 }
+button .navbar-toggler{
+    text-align: right;
+}
 /*--Navbar logo--*/
 .navbar-brand{
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
+}
+a{
+    font-family: 'Amatic SC', cursive;
+    color:black;
+    font-size: 25px;
+    font-weight: 700;
+}
+a:hover{
+    color: #f64a8a;
 }
 /*--Members cards--*/
 .card{
@@ -38,6 +50,18 @@ nav .bg-light{
     padding-top:10px;
 }
 /*--Sign in page--*/
+.bg-img{
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: url('../images/background-SignIn-page.jpg') no-repeat;
+    background-size: cover;
+    height: 100%;
+    opacity: 0.9;
+    overflow: hidden;
+    width: 100%;
+    z-index: -1;
+}
 .form-container{
     overflow: hidden;
     min-height: -webkit-fit-content;
