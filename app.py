@@ -3,6 +3,8 @@ from datetime import date
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
+from flask import Flask
+from flask_socketio import SocketIO, send
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -15,6 +17,8 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+app.config['SECRET-KEY'] = "mysecret"
+socketio = SocketIO(app)
 
 
 mongo = PyMongo(app)
@@ -153,6 +157,16 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+
+# Message chat feature
+@socketio.on('message')
+def handleChat(msg):
+    print("message" + msg)
+    send(msg, broadcast=True)
+
+
+if __name__ == "__main__":
+    socketio.run(app)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

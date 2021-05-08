@@ -1,0 +1,109 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Crafty+Girls&display=swap');
+/*--General--*/
+p{
+   font-family: 'Crafty Girls', cursive;
+}
+/*--Buttons--*/
+.btn{
+    border-color: black;
+    margin-top: 10px;
+}
+.btn:hover{
+    background-color: #f64a8a;
+}
+/*--Navigation bar--*/
+nav .bg-color-navbar{
+    background-color: #ffe3ec;
+}
+button .navbar-toggler{
+    text-align: right;
+}
+/*--Navbar logo--*/
+.navbar-brand{
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+}
+a{
+    font-family: 'Amatic SC', cursive;
+    color:black;
+    font-size: 25px;
+    font-weight: 700;
+}
+a:hover{
+    color: #f64a8a;
+}
+/*--Members cards--*/
+.card{
+    box-shadow: 2px 8px 8px 2px grey;
+    padding-bottom: 10px;
+}
+.card-body{
+    margin-bottom: 10px;
+}
+.account-login{
+    padding-top:10px;
+}
+/*--Sign in page--*/
+.bg-img{
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: url('../images/background-SignIn-page.jpg') no-repeat;
+    background-size: cover;
+    height: 80vh;
+    opacity: 0.9;
+    overflow: hidden;
+    width: 100%;
+    z-index: -1;
+}
+.form-container{
+    overflow: hidden;
+    min-height: -webkit-fit-content;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+}
+.form-heading{
+    padding-top: 70px;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 900;
+}
+input{
+    box-shadow: 1px 1px 1px 1px grey;
+}
+/*--Footer--*/
+footer{
+    position: fixed;
+    bottom: 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    width: 100%;
+}
+.footer-container{
+    background-color: #ffe3ec;
+}
+.footer-container p {
+  text-align: center;
+}
+.social-links li i {
+  justify-items: center;
+}
+#social-col{
+    align-content: flex-center; 
+        text-align: center; 
+        -ms-flex-line-pack: center; 
+}
+/*--Social media icons--*/
+.fab{
+    font-size: 30px;
+    padding-top: 10px;
+    color: black;
+}
+.fab:hover {
+    color: #f64a8a;
+}

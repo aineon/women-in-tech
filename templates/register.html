@@ -3,7 +3,18 @@
 {% block content %}
 
 <main>
- 
+    <head>
+        <title>Message Chat</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web-socket-js/1.0.0/web_socket.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    </head>
+    <body>
+    <script type="text/javascript"></script>
+    <ul id="Message"></ul>
+    <input type="text" id="chatBox">
+    <button id="sendMessage">Send</button>
+    </body>
+
     <!-- Page Heading -->    
         <div class="row text-center">
             <div class="col-10 offset-1 col-md-6 offset-md-3">
@@ -52,3 +63,5 @@
         
     </main>
 {% endblock %}
+
+
