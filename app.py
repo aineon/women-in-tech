@@ -52,6 +52,25 @@ def profile_detail(profile_id):
                            profile=profile)
 
 
+# Display members personal profile page
+@app.route("/profile")
+def my_profile():
+    if session["user"]:
+        my_profile = mongo.db.profiles.find_one(
+                {"created_by": session["user"]})
+        user = mongo.db.users.find_one({"username": session["user"]})
+        connections = user["connections"]
+        my_connections = []
+
+        for con in connections:
+            connection = mongo.db.profiles.find_one({"_id": ObjectId(con)})
+            if connection is not None:
+                my_connections.append(connection)
+
+        return render_template("profile.html", profiles=my_profile,
+                               my_connections=my_connections, user=user)
+
+
 # Add another member as a connection
 @app.route("/add_connection/<profile_id>", methods=["GET", "POST"])
 def add_connection(profile_id):
