@@ -1,0 +1,25 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/* Navigation bar*/
+.navbar{
+    background-color: #ffe3ec;
+}
+/*--Navbar logo--*/
+
+
+/* Footer*/
+.footer-container{
+    background-color: #ffe3ec;
+}
+.social-links li i {
+  justify-items: center;
+  font-size: 27px;
+}
+.footer-container p {
+  text-align: center;
+}
