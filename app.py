@@ -3,7 +3,6 @@ from datetime import date
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
-from flask import Flask
 from flask_socketio import SocketIO, send
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -17,11 +16,20 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+
 # app.config['SECRET-KEY'] = "mysecret"
+
+# app.config["SOCKETIO_SECRET_KEY"] = os.environ.get("SOCKETIO_SECRET_KEY")
+
+
+
 # socketio = SocketIO(app)
 
 
 mongo = PyMongo(app)
+
+date = date.today()
+
 
 date = date.today()
 
@@ -95,7 +103,7 @@ def login():
             # username doesn't exist/is incorrect
             flash("Incorrect Usernname/Password")
             return redirect(url_for("login"))
-      
+
     return render_template("login.html")
 
 
@@ -114,10 +122,67 @@ def profile_detail(profile_id):
                            profile=profile)
 
 
+
+# Add profile form
+@app.route("/add_profile", methods=["GET", "POST"])
+def add_profile():
+    if request.method == "POST":
+        # default values if fields are left blank
+        default_img = ("/static/images/profile_image.png")
+        profile = {
+            "member_type": request.form.get("member_type"),
+            "field": request.form.get("field"),
+            "technologies": request.form.get("technologies"),
+            "experience": request.form.get("experience"),
+            "goals": request.form.get("goals"),
+            "image": request.form.get("image") or default_img,
+            "interests": request.form.get("interests"),
+            "github": request.form.get("github"),
+            "created_by": session["user"],
+            "date_created": date.strftime("%d %b %Y")
+        }
+        mongo.db.profiles.insert_one(profile)
+        flash("Your Profile Has Been Added")
+        return redirect(url_for("my_profile", username=session["user"]))
+
+    profiles = mongo.db.profiles.find().sort("fullname", 1)
+    return render_template("add_profile.html", profiles=profiles)
+
+
+# Update profile form
+@app.route("/update_profile/<profile_id>", methods=["GET", "POST"])
+def update_profile(profile_id):
+    if request.method == "POST":
+        # default values if fields are left blank
+        default_img = ("/static/images/profile_image.png")
+        update = {
+            "member_type": request.form.get("member_type"),
+            "field": request.form.get("field"),
+            "technologies": request.form.get("technologies"),
+            "experience": request.form.get("experience"),
+            "goals": request.form.get("goals"),
+            "image": request.form.get("image") or default_img,
+            "interests": request.form.get("interests"),
+            "github": request.form.get("github"),
+            "created_by": session["user"],
+            "date_created": date.strftime("%d %b %Y")
+        }
+        mongo.db.profiles.update({"_id": ObjectId(profile_id)}, update)
+        flash("Your Profile Has Been Updated")
+        return redirect(url_for("my_profile", username=session["user"]))
+
+    profile = mongo.db.profiles.find_one({"_id": ObjectId(profile_id)})
+    profiles = mongo.db.profiles.find().sort("fullname", 1)
+    return render_template("update_profile.html", profile=profile,
+                           profiles=profiles)
+
+
+
 # Display members personal profile page
 @app.route("/my_profile/<username>", methods=["GET", "POST"])
 def my_profile(username):
     # grab the session user's username from db
+
     # username = mongo.db.users.find_one(
     #     {"username": session["user"]})["username"]
     # if session["user"]:
@@ -128,6 +193,16 @@ def my_profile(username):
                            username=username)
                         #    user=user,
                         #    profiles=my_profile)
+
+
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    if session["user"]:
+        my_profile = list(mongo.db.profiles.find(
+                {"created_by": session["user"]}))
+        user = mongo.db.users.find_one({"username": session["user"]})
+    return render_template("profile.html", username=username,
+                           user=user, profiles=my_profile)
 
 
 

@@ -1,4 +1,69 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="tab-container">
+    <div class="row">
+        <div class="col-12">
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'profile')">My Profile</button>
+                <button class="tablinks" onclick="openTab(event, 'connections')">My Connections</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div id="profile" class="tabcontent mb-3">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                            <div class="image-container ">
+                                <img class="card-img-top img-fluid" src="" alt="">
+                            </div>
+                        </div>
+                    {% if profiles|length > 0 %}
+                       {% for profile in profiles %} 
+                     
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="profile-info-container mb-5 mt-md-5">
+                                <h3 class="mb-0 font-weight-bold text-center">{{ profile.fullname }} </h3>
+                                <span class="text-muted">({{ profile.member_type }})</span></h5>
+                                <p class="mb-0">Field: {{ profile.field }}
+                                <br> Experience: {{ profile.experience }}
+                                <br> Technologies: {{ profile.technologies }}
+                                <br> Goals: {{ profile.goals }}
+                                <br> Interests: {{ profile.interests }}
+                                <br> Github: {{ profile.github }}
+                                </p>    
+                            </div>
+                        </div>
+                        <div class="col-12 text-center">
+                        <a href="{{ url_for('update_profile', profile_id=profile._id) }}" class="btn">Update Profile</a>
+                    </div>
+                    {% endfor %}
+                   
+                  {% else %}
+                  <h3>You have not added your profile yet</h3>
+                  <h3>Please add your profile</h3>
+                  <a href="{{ url_for('add_profile') }}" class="btn" type="submit">Add Your Profile</a>
+                  {% endif %}
+            </div>
+         </div>
+        </div>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-12">
+            <div id="connections" class="tabcontent mb-3">
+                <h3>My Connections</h3>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/profile_script.js') }}"></script>
 {% endblock %}
