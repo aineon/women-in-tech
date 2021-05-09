@@ -4,7 +4,7 @@
 
 
 <main>
- <section class="container-fluid signup-img">
+    <section class="container-fluid signup-img">
         <div class="row text-center">
             <div class="col-10 offset-1 col-md-6 offset-md-3">
                   <h1 class="form-heading">Sign Up</h1>  
@@ -12,9 +12,9 @@
         </div>
     
     <!-- Log In Form-->
-        <div class="row form-container">
+        <div class="row form-container mb-5">
             <form class="col-10 offset-1 col-md-6 offset-md-3" method="POST" action="{{ url_for('register') }}">
-                <div class="row">
+                <div class="row pt-2">
                     <div class="form-group col-md-6 text-center">
                         <label for="firstname" class="d-none">First Name</label>
                         <input type="text" class="form-control validate" id="firstname" name="firstname" placeholder="First Name" required>
@@ -37,19 +37,19 @@
                     </div>
                 </div>
                 <div class="row text-center">
-                    <div class="col-12 col-md-6 offset-md-3">
-                        <button type="submit" class="btn-small login-btn">
+                    <div class="col-12">
+                        <button type="submit" class="btn">
                                 Sign Up
                         </button>
                         <p class="text-center">
                                 Already have an account?
-                        <a href="" class="">Sign In</a>
+                        <a href="{{ url_for('login') }}" class="form-link hvr-grow">Sign In</a>
                         </p>
                     </div>
                 </div>
             </form>
         </div>
     </section>
-    </main>
+</main>
 {% endblock %}
 

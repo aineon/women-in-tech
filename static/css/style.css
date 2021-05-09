@@ -226,12 +226,12 @@ nav {
     min-height: -webkit-fit-content;
     min-height: -moz-fit-content;
     min-height: fit-content;
-     color: #fff;
-     background-color: rgba(60, 60, 60, 0.6);
-     margin: auto;
-    width: 35%;
+    color: #fff;
+    background-color: rgba(60, 60, 60, 0.6);
+    margin: auto;
     padding: 20px;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .form-heading{
@@ -259,9 +259,17 @@ nav {
     z-index: -1;
 }
 
+
+.form-link,
+.form-link:hover {
+    font-weight: bold;
+    text-decoration: none;
+    color: #f64a8a;
+}
+
 /*--Footer--*/
 footer{
-    position: fixed;
+    /*position: fixed; */
     bottom: 0;
     -ms-flex-negative: 0;
         flex-shrink: 0;
@@ -375,6 +383,15 @@ footer{
 
 .chat-message {
     font-size: 1.5rem;
+}
+
+.message-box {
+    border-radius: 3px;
+    border: 2px solid #f64a8a;
+}
+
+.message-container {
+    padding-bottom: 3rem;
 }
 
 .profile-heading,
