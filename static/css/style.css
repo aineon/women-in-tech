@@ -6,9 +6,37 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Crafty+Girls&display=swap');
 /*--General--*/
+body {
+    font-family: "Crafty Girls", sans-serif;
+    background-color: white;
+    background-size: cover;
+  }
+  
+  .background-image {
+      height: 100px;
+      width: 60px;
+  }
+
+   .h1 {
+    font-family: "Crafty Girls", sans-serif;
+    color:#f64a8a;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 200px;
+    display: flex;
+    justify-content: center;
+    
+  } 
+
+ .card img {
+     height: 300px;
+     object-fit: cover;
+ }
 p{
    font-family: 'Crafty Girls', cursive;
 }
+
+
 /*--Buttons--*/
 .btn{
     border-color: black;
@@ -19,6 +47,7 @@ p{
     background-color: #ffe3ec;
 }
 /*--Navigation bar--*/
+
 nav {
     position: fixed;
     top: 0;
@@ -141,6 +170,13 @@ nav {
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
 }
+
+/*--HomePage cards--*/
+.card-deck {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
 /*--Members cards--*/
 .card{
     box-shadow: 2px 8px 8px 2px grey;
@@ -239,6 +275,7 @@ footer{
  /* Tabs */
  .tab-container {
     margin-bottom: 80px;
+    margin-top: 80px;
 }
 
 .tablinks {

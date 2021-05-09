@@ -29,7 +29,7 @@
             <li><a href="{{ url_for('members') }}">Members</a></li>
             <li><a href="{{ url_for('my_profile', username=session['user']) }}">My Profile</a></li>
             <li><a href="{{ url_for('login') }}">Sign In</a></li>
-            <li><a href="#">Sign Out</a></li>
+            <li><a href="{{ url_for('logout') }}">Sign Out</a></li>
             <li><a href="{{ url_for('register') }}">Sign Up</a></li>
         </ul>
         <div class="burger">
@@ -46,7 +46,7 @@
           {% if messages %}
               {% for message in messages %}
                   <div id="flashMessage{{loop.index}}" class="flash row">
-                       <div class="col s12 m6 offset-m3">
+                       <div class="col-12 col-md-6 offset-md-3">
                           <h4 class="flash-message text-center">{{ message }}</h4>
                       </div>
                   </div>
@@ -95,6 +95,7 @@
         </div>
     </div>
   </footer>
+  
   <script src="https://kit.fontawesome.com/067e5a2c50.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">

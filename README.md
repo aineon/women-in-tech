@@ -1,6 +1,29 @@
 # Wit Connect
 ## Overview
 The aim of this project is to give people who identify as women the chance to thrive in the world of coding. This is a networking site which provides a tool like a message chat to link and connect mentors and mentee. 
+<a></a>
+## Table of contents 
+* [UX](#ux)
+    * [User Goals](#user-goals)
+    * [User Stories](#user-stories)
+    * [Site Owners Goals](#site-owners-goals)
+    * [User Requirements and Expectations](#user-requirements-and-expectations)
+        * [Requirements](#requirements)
+        * [Expectations](#expectations)
+    * [Design Choices](#design-choices)
+        * [Fonts](#fonts)
+        * [Icons](#icons)
+        * [Colors](#colors)
+        * [Structure](#structure)
+* [Wireframes](#wireframes)
+* [Features](#features)
+    * [Existing Features](#existing-features)
+    * [Features to be implemented](#features-to-be-implemented)
+* [Technologies used](#technologies-used)
+    * [Languages](#languages)
+    * [Tools and Libraries](#tools-and-libraries)
+* [Testing](#testing)
+* [Deployment](#deployment)
 
 ## User Stories
 - "As a woman and a student I want to get in touch with a mentor who can help me coding"
@@ -15,7 +38,9 @@ The aim of this project is to give people who identify as women the chance to th
 - I want to register and create my profile page.
 
 ### Returning visitor goals
+
 - I want to get in touch with my mentor or mentee 
+
 
 ### Frequent visitor goals
 - I want to develop a professional relationship with other women coders.
@@ -23,6 +48,22 @@ The aim of this project is to give people who identify as women the chance to th
 ## Site owner goals
 - As women and students we wish to create an inclusive environment for all coders.
 
+## Design 
+
+#### Fonts
+
+[Google Fonts](https://fonts.google.com/) was used in the making of Women-In-Tech. After reviewing various options. we decided to go with
+Amatic Sc for all our headings for its unique design. To follow that up, Crafty Girls cursive was used for paragraphs. 
+
+#### Icons
+The icons used here were found in the font awesome library. 
+
+#### Colors
+
+## Wireframes 
+* [Homepage Wireframes](https://github.com/aineon/women-in-tech/blob/master/assets/home-page-Witconnect.png)
+* [Members Page Wireframes](https://github.com/aineon/women-in-tech/blob/master/assets/members-page.png)
+* [Homepage Wireframes](https://github.com/aineon/women-in-tech/blob/master/assets/MyProfile.png)
 ## Features
 ### Existing Features
 - The navigation bar is fixed to the top of the page and brings the users to the different pages.

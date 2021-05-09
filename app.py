@@ -22,13 +22,10 @@ app.secret_key = os.environ.get("SECRET_KEY")
 # app.config["SOCKETIO_SECRET_KEY"] = os.environ.get("SOCKETIO_SECRET_KEY")
 
 
-
 # socketio = SocketIO(app)
 
 
 mongo = PyMongo(app)
-
-date = date.today()
 
 
 date = date.today()
@@ -122,7 +119,6 @@ def profile_detail(profile_id):
                            profile=profile)
 
 
-
 # Add profile form
 @app.route("/add_profile", methods=["GET", "POST"])
 def add_profile():
@@ -179,51 +175,55 @@ def update_profile(profile_id):
                            profiles=profiles)
 
 
-
 # Display members personal profile page
 @app.route("/my_profile/<username>", methods=["GET", "POST"])
 def my_profile(username):
     # grab the session user's username from db
-
-    # username = mongo.db.users.find_one(
-    #     {"username": session["user"]})["username"]
-    # if session["user"]:
-    #     my_profile = mongo.db.profiles.find(
-    #             {"created_by": session["user"]})
-    #     user = mongo.db.users.find_one({"username": session["user"]})  
-    return render_template("profile.html",
-                           username=username)
-                        #    user=user,
-                        #    profiles=my_profile)
-
-
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     if session["user"]:
         my_profile = list(mongo.db.profiles.find(
                 {"created_by": session["user"]}))
         user = mongo.db.users.find_one({"username": session["user"]})
-    return render_template("profile.html", username=username,
-                           user=user, profiles=my_profile)
-
+        connections = user["connections"]
+        my_connections = []
+        for con in connections:
+            connection = mongo.db.profiles.find_one({"_id": ObjectId(con)})
+            if connection is not None:
+                my_connections.append(connection)
+        return render_template("profile.html", username=username,
+                               user=user, profiles=my_profile,
+                               my_connections=my_connections)
+    return redirect(url_for('login'))
 
 
 # Add another member as a connection
-# @app.route("/add_connection/<profile_id>", methods=["GET", "POST"])
-# def add_connection(profile_id):
-#     if request.method == "POST":
-#         user = mongo.db.users.find_one({"username": session["user"].lower()})
-#         connections = mongo.db.users.find_one(user)["connections"]
-#         # if member is already connected
-#         if ObjectId(profile_id) in connections:
-#             flash("You are already connected!")
-#             return redirect(url_for("members"))
-#         # otherwise adds member to users connections
-#         mongo.db.users.update_one(
-#              user, {"$push": {
-#                 "connections": ObjectId(profile_id)}})
-#         flash("You are now connected!")
-#         return redirect(url_for("members"))
+@app.route("/add_connection/<profile_id>", methods=["GET", "POST"])
+def add_connection(profile_id):
+    if request.method == "POST":
+        user = mongo.db.users.find_one({"username": session["user"].lower()})
+        connections = mongo.db.users.find_one(user)["connections"]
+        # if member is already connected
+        if ObjectId(profile_id) in connections:
+            flash("You are already connected!")
+            return redirect(url_for("members"))
+        # otherwise adds member to users connections
+        mongo.db.users.update_one(
+             user, {"$push": {
+                "connections": ObjectId(profile_id)}})
+        flash("You are now connected!")
+        return redirect(url_for("members"))
+
+
+# Allows user to remove a connection 
+@app.route("/remove_connection/<profile_id>", methods=["GET", "POST"])
+def remove_connection(profile_id):
+    if request.method == "POST":
+        user = mongo.db.users.find_one({"username": session["user"].lower()})
+        mongo.db.users.update_one(user, {
+            "$pull": {"connections": ObjectId(profile_id)}})
+        flash("Connection removed! ")
+        return redirect(url_for("my_profile", username=session["user"]))
 
 
 # Logs user out of their account
