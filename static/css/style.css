@@ -386,7 +386,12 @@ footer{
     font-size: 1.5rem;
 }
 
+.profile-heading,
+.profile-info, 
 .chat-date {
     font-family: 'Amatic SC', cursive;
 }
 
+.profile-container {
+    margin-top: 80px;
+}
