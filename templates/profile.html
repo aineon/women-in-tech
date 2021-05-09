@@ -3,7 +3,7 @@
 {% block content %}
 <div class="tab-container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 tab-bar">
             <div class="tab">
                 <button class="tablinks" onclick="openTab(event, 'profile')">My Profile</button>
                 <button class="tablinks" onclick="openTab(event, 'connections')">My Connections</button>
@@ -14,7 +14,7 @@
 
     <div class="row">
         <div class="col-10 offset-1">
-            <div id="profile" class="tabcontent mb-3 mt-3">
+            <div id="profile" class="tabcontent mb-3 mt-4">
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                         {% if profiles|length > 0 %}
@@ -24,9 +24,9 @@
                         </div>
                     </div>
                
-                    <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                        <div class="profile-info-container mb-5 mt-md-5 profile-info">
-                            <h3 class="mb-0 font-weight-bold text-center">{{ profile.fullname }} </h3>
+                    <div class="col-12 col-md-6 col-lg-4 offset-lg-2 ml-2">
+                        <div class="profile-info-container mb-2">
+                            <h3 class="mb-0 font-weight-bold profile-info">{{ profile.fullname }}</h3>
                             <span class="text-muted">({{ profile.member_type }})</span>
                             <p class="mb-0"><strong class="profile-info">Field:</strong> {{ profile.field }}
                             <br><strong class="profile-info">Experience:</strong> {{ profile.experience }}
@@ -56,9 +56,11 @@
     <div class="row">
         <div class="col-12">
             <div id="connections" class="tabcontent mb-3">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
                 {% if my_connections|length > 0 %}
                     {% for connection in my_connections %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-2">
                             <div class="card h-100 m-2 ">
                                 <div class="row no-gutters">
                                     <img class="card-img-top img-fluid" src="{{ connection.image }}" alt="{{ connection.fullname }}">
@@ -76,7 +78,25 @@
                                     </form>
                                 </div>
                             </div>
-                        </div>    
+                            {% if loop.index is divisibleby 1 %}
+                            <div class="col-12 d-sm-none mb-4"> </div>
+                        {% endif %}                        
+                        {% if loop.index is divisibleby 2 %}
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-4">
+                                <hr class="mt-5 w-75">
+                            </div>
+                        {% endif %}
+                        {% if loop.index is divisibleby 3 %}
+                            <div class="col-12 d-none d-lg-block d-xl-none mb-4">
+                                <hr class="mt-5  w-75">
+                            </div>
+                        {% endif %}
+                        {% if loop.index is divisibleby 4 %}
+                            <div class="col-12 d-none d-xl-block mb-4">
+                                <hr class="mt-5 w-75">
+                             </div>
+                             {% endif %}
+                            </div>  
                     {% endfor%}
                     {% else %}
                     <div class="col-12 text-center mt-2">
@@ -84,13 +104,14 @@
                         <a href="{{ url_for('members') }}" class="btn" type="submit">Make Connections!</a>
                     </div>
                 {% endif %}  
+                </div>
             </div>
         </div>
     </div>
 
-   <div class="row">
+    <div class="row">
         <div class="col-12">
-            <div id="chat" class="tabcontent mb-3">
+            <div id="chat" class="tabcontent mb-5">
                <div class="row">
                    <div class="col-12 text-center mt-2">
                        <h2 class="profile-heading">Wanna chat with other members?!</h2>
@@ -100,7 +121,7 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 {% endblock %}
 
 {% block scripts %}

@@ -38,12 +38,12 @@ p {
    font-family: 'Crafty Girls', cursive;
 }
 
-
 /*--Buttons--*/
 .btn{
     border-color: black;
     margin-top: 10px;
     background-color: #f64a8a;
+    font-weight: 700;
 }
 
 .btn:hover{
@@ -113,11 +113,7 @@ nav {
     transition: all 0.3s ease;
 }
 
-@media only screen and (max-width: 425px) {
-    .tablinks {
-        font-size: 1rem;
-    }
-}
+
 @media screen and (max-width: 1024px) {
     .nav-links {
         width: 60%;
@@ -185,6 +181,7 @@ nav {
     justify-content: flex-end;
     align-items: flex-end;
 }
+
 #homepage-cards{
     padding-bottom: 40px;
 }
@@ -233,21 +230,26 @@ nav {
     color: #fff;
     background-color: rgba(60, 60, 60, 0.6);
     margin: auto;
-     color: #fff;
-     background-color: rgba(60, 60, 60, 0.6);
-     margin: auto;
     padding: 20px;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.form-heading{
+.form-heading,
+.form-heading-signup {
     padding-top: 20%;
     padding-bottom: 3%;
     font-family: 'Amatic SC', cursive;
     font-weight: 900;
-    font-size: 5rem;
+    font-size: 5rem; 
+}
+
+.form-heading {
     color: white;
+}
+
+.form-heading-signup {
+    color: #f64a8a;
 }
 
 .account-login{
@@ -265,13 +267,12 @@ nav {
     align-items: center;
     background: url('../images/signup.jpeg') no-repeat;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
     opacity: 0.7;
     overflow: hidden;
     width: 100%;
     z-index: -1;
 }
-
 
 .form-link,
 .form-link:hover {
@@ -283,10 +284,12 @@ nav {
 /*--Footer--*/
 footer{
     /*position: fixed; */
+    right: 0;
     bottom: 0;
     -ms-flex-negative: 0;
         flex-shrink: 0;
     width: 100%;
+    padding-top: 80px;
 }
 
 .footer-container{
@@ -307,7 +310,8 @@ footer{
         -ms-flex-line-pack: center; 
 }
 
-/*--Social media icons--*/
+/*--Social media icons--
+*/
 .fab{
     font-size: 30px;
     padding-top: 10px;
@@ -322,6 +326,10 @@ footer{
  .tab-container {
     margin-bottom: 80px;
     margin-top: 75px;
+}
+
+.tab-bar {
+    padding-right: 0;
 }
 
 .tablinks {
@@ -360,7 +368,7 @@ footer{
 
 /* Flash Messages */
 
-.flash.row {
+.flash .row {
     background-color: #ffe3ec;
     margin-bottom: 0;
 }
@@ -413,6 +421,28 @@ footer{
     font-family: 'Amatic SC', cursive;
 }
 
+.profile-info {
+    color: #f64a8a;
+}
+
 .profile-container {
     margin-top: 80px;
+}
+
+.profile-info-container {
+    font-size: 1.5rem;
+}
+
+label {
+    font-family: 'Amatic SC', cursive;
+    color: #f64a8a;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+@media screen and (max-width: 664px) {
+    .tablinks {
+        font-size: 1rem;
+        padding: 3px;
+    }
 }
