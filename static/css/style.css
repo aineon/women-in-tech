@@ -117,6 +117,9 @@ nav {
     .tablinks {
         font-size: 1rem;
     }
+    .form-container{
+        width: 70%;
+    }
 }
 @media screen and (max-width: 1024px) {
     .nav-links {
@@ -239,7 +242,7 @@ nav {
 }
 
 .form-heading{
-    padding-top: 20%;
+    padding-top: 10%;
     padding-bottom: 3%;
     font-family: 'Amatic SC', cursive;
     font-weight: 900;
@@ -251,8 +254,12 @@ nav {
    font-weight: 900;
 }
 
-.signup:hover{
-    color: #f64a8a;
+.signin{
+    color: black;
+}
+
+.signin:hover{
+    color: #ffe3ec;
 }
 
 /*--Sign Up page--*/
@@ -267,6 +274,25 @@ nav {
     overflow: hidden;
     width: 100%;
     z-index: -1;
+}
+
+.signup{
+    color: black;
+}
+
+.signin{
+    color: black;
+}
+.signin:hover{
+    color: #ffe3ec;
+}
+
+.sign-up{
+    color: black;
+}
+
+.sign-up:hover{
+    color: #ffe3ec;
 }
 
 /*--Footer--*/
