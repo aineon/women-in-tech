@@ -12,11 +12,7 @@ body {
     background-size: cover;
   }
   
-  .background-image {
-      height: 100px;
-      width: 60px;
-  }
-
+ 
    .h1 {
     font-family: "Crafty Girls", sans-serif;
     color:#f64a8a;
@@ -219,6 +215,7 @@ nav {
 }
 .form-heading{
     padding-top: 20%;
+    padding-bottom: 3%;
     font-family: 'Amatic SC', cursive;
     font-weight: 900;
     font-size: 5rem;
@@ -242,7 +239,6 @@ nav {
 }
 /*--Footer--*/
 footer{
-    position: fixed;
     bottom: 0;
     -ms-flex-negative: 0;
         flex-shrink: 0;
