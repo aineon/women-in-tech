@@ -56,6 +56,32 @@
         <div class="col-12">
             <div id="connections" class="tabcontent mb-3">
                 <h3>My Connections</h3>
+                {% if my_connections|length > 0 %}
+                    {% for connection in my_connections %}
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card h-100 m-2 ">
+                                <div class="row no-gutters">
+                                    <img class="card-img-top img-fluid" src="{{ connection.image }}" alt="{{ connection.fullname }}">
+                                </div>
+                                <div class="card-body pb-0 pt-3 text-center">
+                                    <h5 class="card-title">{{ connection.fullname }} <span class="text-muted">({{ connection.member_type }})</span></h5>
+                                    <p class="mb-0 card-text">Field: {{ connection.field }}
+                                    <br class="card-text"> Experience: {{ connection.experience }}
+                                    <br class="card-text"> Technologies: {{ connection.technologies }}
+                                    </p>
+                      
+                                    <a href="{{ url_for('profile_detail', profile_id=connection._id) }}" class="btn">View Profile</a>
+                                </div>
+                            </div>
+                        </div>    
+                    {% endfor%}
+                    {% else %}
+                    <div class="col-12 text-center">
+                        <h3>You have not made any connections yet!</h3>
+                       
+                        <a href="{{ url_for('members') }}" class="btn" type="submit">Make Connections!</a>
+                    </div>
+                {% endif %}  
             </div>
         </div>
     </div>
