@@ -7,15 +7,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Crafty+Girls&display=swap');
 /*--General--*/
 body {
-    font-family: "Laila", sans-serif;
+    font-family: "Crafty Girls", sans-serif;
     background: url(../images/collaborate.jpg) no-repeat center center;
     background-size: cover;
   }
   
   h1 {
-    margin: 25px auto;
+    font-family: "Crafty Girls", sans-serif;
+    margin: 15px auto;
     text-align: center;
+    display: flex;
+    justify-content: center;
   }
+
 p{
    font-family: 'Crafty Girls', cursive;
 }
@@ -23,31 +27,133 @@ p{
 .btn{
     border-color: black;
     margin-top: 10px;
-}
-.btn:hover{
     background-color: #f64a8a;
 }
-/*--Navigation bar--*/
-
-nav .bg-color-navbar{
+.btn:hover{
     background-color: #ffe3ec;
 }
-button .navbar-toggler{
-    text-align: right;
-}
-/*--Navbar logo--*/
-.navbar-brand{
+/*--Navigation bar--*/
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height:  8.5vh;
+    background-color: #ffe3ec;
+    z-index: 9999; 
     font-family: 'Amatic SC', cursive;
-    font-size: 30px;
 }
-a{
-    font-family: 'Amatic SC', cursive;
-    color:black;
-    font-size: 25px;
-    font-weight: 700;
+
+.logo {
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: 900;
 }
-a:hover{
-    color: #f64a8a;
+
+.logo:hover{
+         color: white;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+     color: white !important; 
+}
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color:black;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #ffe3ec;;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+    }
+    
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+.nav-active {
+        transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /*--HomePage cards--*/
@@ -59,10 +165,14 @@ a:hover{
 /*--Members cards--*/
 .card{
     box-shadow: 2px 8px 8px 2px grey;
+    margin-top: 100px;
     padding-bottom: 10px;
 }
 .card-body{
     margin-bottom: 10px;
+}
+.card title .card text{
+    font-weight: 900;
 }
 .account-login{
     padding-top:10px;
@@ -75,7 +185,7 @@ a:hover{
     background: url('../images/background-SignIn-page.jpg') no-repeat;
     background-size: cover;
     height: 80vh;
-    opacity: 0.9;
+    opacity: 0.7;
     overflow: hidden;
     width: 100%;
     z-index: -1;
@@ -85,6 +195,7 @@ a:hover{
     min-height: -webkit-fit-content;
     min-height: -moz-fit-content;
     min-height: fit-content;
+    z-index: 1;
 }
 .form-heading{
     padding-top: 70px;
@@ -93,6 +204,9 @@ a:hover{
 }
 input{
     box-shadow: 1px 1px 1px 1px grey;
+}
+.account-login{
+    font-weight: 900;
 }
 /*--Footer--*/
 footer{
@@ -123,5 +237,63 @@ footer{
     color: black;
 }
 .fab:hover {
+    color: #f64a8a;
+}
+
+ /* Tabs */
+ .tab-container {
+    margin-bottom: 80px;
+}
+
+.tablinks {
+    background-color: #ffe3ec;
+    color: #f64a8a;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 1rem;
+    width: 50%;
+    font-weight: 700;
+    /* -webkit-box-shadow: 0 -3px 5px #ffe3ec, 0 3px 5px #ffe3ec;
+            box-shadow: 0 -3px 5px #ffe3ec, 0 3px 5px #ffe3ec; */
+}
+
+.tabcontent {
+    display: none;
+    min-height: 80%;
+}
+
+.tab button {
+    background-color: #ffe3ec;
+    color: #f64a8a;
+}
+
+.tab button:hover {
+    background-color: #000;
+    color: #f64a8a;
+}
+
+.tab button.active {
+    background-color: #f64a8a;
+    color: #000;
+}
+
+/* Flash Messages */
+
+.flash.row {
+    background-color: #ffe3ec;
+    margin-bottom: 0;
+}
+
+.flash-message {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Amatic SC', cursive;
+    line-height: 95%;
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: .5rem;
     color: #f64a8a;
 }

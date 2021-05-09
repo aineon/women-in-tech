@@ -38,7 +38,9 @@ The aim of this project is to give people who identify as women the chance to th
 - I want to register and create my profile page.
 
 ### Returning visitor goals
-- I want to be able to 
+
+- I want to get in touch with my mentor or mentee 
+
 
 ### Frequent visitor goals
 - I want to develop a professional relationship with other women coders.
@@ -68,6 +70,27 @@ The icons used here were found in the font awesome library.
 - The logo is on the top left.
 - The footer is fixed to the bottom of the page and provides social media pages icons (GitHub, Twitter, Facebook, Instagram) and copyright info in the center.
 
+## Skeleton
+- [Landing Page wireframe](https://github.com/aineon/women-in-tech/static/wireframes/landing-page-wireframe.pdf)
+- [Members Page wireframe](https://github.com/aineon/women-in-tech/static/wireframes/members-wireframe.pdf)
+- [My Profile wireframe](https://github.com/aineon/women-in-tech/static/wireframes/my-profile-wireframe.pdf)
+
+## Surface
+**Design Scheme**
+
+It plays with neutral soft colours on pink shades:
+
+- Light shade of pink: #ffe3ec for navigation bar and footer.
+- French Rose: #f64a8a
+- The logo has been created by Tindy.
+
+**Typography**
+- Font-family: 'Amatic SC' for headings. We have chosen this font for its artistic and clear aspect.
+- Font-family: 'Crafty Girls' for body content. We have chosen this font for its elegant design.
+
+**Imagery**
+
+The images have been selected to be eye-catching and appealing. The purpose is to showcase women engaged in the coding world and what the can achieve together.
 
 ## Technologies Used
 
@@ -84,5 +107,9 @@ The icons used here were found in the font awesome library.
 3. [Google Fonts](https://fonts.google.com/) : was used to import typography fonts.
 4. [Balsamiq](https://balsamiq.com/) : was used to create wireframes during the design of the layout.
 
+## Credits
+### media
+
+- The images have been selected among royalty free websites: [https://www.pexels.com/](https://www.pexels.com/search/women%20coding/) and [https://unsplash.com/](https://unsplash.com/s/photos/women-in-tech). 
 
 > **_NOTE:_** This is for educational purposes.

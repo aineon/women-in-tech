@@ -6,27 +6,24 @@
         <div class="row mt-1 mb-2"></div>
         <div class="row">
             {% for profile in profiles %}
-                <!-- <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3"> -->
-                    <div class="card h-100">
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card h-100 m-2 ">
                         <div class="row no-gutters">
-                            <div class="col-sm-4 col-md-4 col-lg-4 col-xl-3">
                                 <img class="card-img-top img-fluid" src="{{ profile.image }}" alt="{{ profile.name }}">
-                                <img class="card-img-top img-fluid" src="" alt="">
-                            </div>
                         </div>
-                        <div class="col-sm-8"></div>
                         <div class="card-body pb-0 pt-3 text-center">
-                            <h5 class="card-title">{{ profile.name }} <span class="text-muted">({{ profile.profile_type }})</span></h5>
-                            <p class="mb-0">Field: {{ profile.field }}
-                            <br> Experience: {{ profile.experience }}
-                            <br> Technologies: {{ profile.technologies }}
+                            <h5 class="card-title">{{ profile.fullname }} <span class="text-muted">({{ profile.member_type }})</span></h5>
+                            <p class="mb-0 card-text">Field: {{ profile.field }}
+                            <br class="card-text"> Experience: {{ profile.experience }}
+                            <br class="card-text"> Technologies: {{ profile.technologies }}
                             </p>
               
-                        <a href="{{ url_for('profile_detail', profile_id=profile._id) }}" class="btn">View Profile</a>
+                            <a href="{{ url_for('profile_detail', profile_id=profile._id) }}" class="btn">View Profile</a>
                         </div>
                    
-                </div>
-                {% if loop.index is divisibleby 1 %}
+                    </div>
+                </div>    
+            {% if loop.index is divisibleby 1 %}
                 <div class="col-12 d-sm-none mb-4"> </div>
             {% endif %}                        
             {% if loop.index is divisibleby 2 %}
@@ -45,7 +42,7 @@
                 </div>
             {% endif %}
         {% endfor %}
-            </div>    
+         
         </div>
     </div>
 </div>
