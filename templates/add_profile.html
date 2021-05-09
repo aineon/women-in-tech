@@ -5,7 +5,7 @@
 <form method="POST" action="" class="col-10 offset-1">
     <div class="form-group">
         <label for="memberType">Please Select One</label>
-        <select class="form-control" id="memberType" name="memberType" required>
+        <select class="form-control" id="member_type" name="member_type" required>
             <option value="mentor">Mentor</option>
             <option value="mentee">Mentee</option>
         </select>
@@ -50,9 +50,8 @@
         <label for="image">Choose Image</label>
         <input type="file" class="form-control-file" id="image" name="image">
     </div>
-
-<div class="row">
-    <button type="submit" class="btn">Save Profile</button>
-</div>
-</form>
+    <div class="row">
+        <button type="submit" class="btn">Save Profile</button>
+    </div>
+    </form>
 {% endblock %}

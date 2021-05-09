@@ -7,8 +7,7 @@
             <div class="tab">
                 <button class="tablinks" onclick="openTab(event, 'profile')">My Profile</button>
                 <button class="tablinks" onclick="openTab(event, 'connections')">My Connections</button>
-                <button class="tablinks" onclick="openTab(event, 'update')">Update Profile</button>
-                <!-- <button class="tablinks" onclick="openTab(event, 'deactivate')">Deactivate Account</button> -->
+
             </div>
         </div>
     </div>
@@ -23,12 +22,13 @@
                                 <img class="card-img-top img-fluid" src="" alt="">
                             </div>
                         </div>
-                  
+                    {% if profiles|length > 0 %}
                        {% for profile in profiles %} 
+                     
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="profile-info-container mb-5 mt-md-5">
-                                <h3 class="mb-0 font-weight-bold text-center">{{ profile.fullName }} </h3>
-                                <span class="text-muted">({{ profile.user_type }})</span></h5>
+                                <h3 class="mb-0 font-weight-bold text-center">{{ profile.fullname }} </h3>
+                                <span class="text-muted">({{ profile.member_type }})</span></h5>
                                 <p class="mb-0">Field: {{ profile.field }}
                                 <br> Experience: {{ profile.experience }}
                                 <br> Technologies: {{ profile.technologies }}
@@ -37,18 +37,22 @@
                                 <br> Github: {{ profile.github }}
                                 </p>    
                             </div>
-                            <a href="" class="btn">Update Profile</a>
                         </div>
-                    </div>
-                    <div>
-                        <h3>You haven't created a profile yet</h3>
-                        <a href="" class="btn">Create Profile</a>
+                        <div class="col-12 text-center">
+                        <a href="{{ url_for('update_profile', profile_id=profile._id) }}" class="btn">Update Profile</a>
                     </div>
                     {% endfor %}
-                  
+                   
+                  {% else %}
+                  <h3>You have not added your profile yet</h3>
+                  <h3>Please add your profile</h3>
+                  <a href="{{ url_for('add_profile') }}" class="btn" type="submit">Add Your Profile</a>
+                  {% endif %}
             </div>
+         </div>
         </div>
     </div>
+</div>
 
     <div class="row">
         <div class="col-12">
@@ -57,15 +61,7 @@
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-12">
-            <div id="update" class="tabcontent mb-3">
-                <h3>Update Profile</h3>
-               
-            </div>
-        </div>
-    </div>
+</div>
 {% endblock %}
 
 {% block scripts %}

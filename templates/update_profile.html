@@ -1,15 +1,22 @@
-<form method="POST" action="" class="col-10 offset-1">
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+
+<form method="POST" action="{{ url_for('update_profile', profile_id=profile._id) }}" class="col-10 offset-1">
     <div class="form-group">
         <label for="memberType">Please Select One</label>
-        <select class="form-control" id="memberType" name="memberType" value="" required>
+        <select class="form-control" id="member_type" name="member_type" required>
             <option value="mentor">Mentor</option>
             <option value="mentee">Mentee</option>
         </select>
     </div>
 
     <div class="form-group">
-        <label for="fullName">Name</label>
-        <input type="text" class="form-control" id="fullName" name="fullName" value="{{ profile.fullName }}" required>
+        <label for="fullname">Name</label>
+        <input type="text" class="form-control" id="fullname" name="fullname" value="{{ profile.fullname }}" required>
     </div>
 
     <div class="form-group">
@@ -46,7 +53,9 @@
         <label for="image">Choose Image</label>
         <input type="file" class="form-control-file" id="image" name="image" value="{{ profile.image }}">
     </div>
-
-    <button class="btn" type="submit">Update Profile</button>
-
+    <div class="text-center mb-4">
+        <button class="btn" type="submit">Update Profile</button>
+    </div>
 </form>
+
+{% endblock %}
