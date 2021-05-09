@@ -9,6 +9,7 @@
 body {
     height: 100vh;
     font-family: "Crafty Girls", sans-serif;
+    flex: 1;
     background-color: white;
     background-size: cover;
 }
@@ -184,6 +185,9 @@ nav {
     justify-content: flex-end;
     align-items: flex-end;
 }
+#homepage-cards{
+    padding-bottom: 40px;
+}
 
 /*--Members cards--*/
 .members-container {
@@ -229,6 +233,9 @@ nav {
     color: #fff;
     background-color: rgba(60, 60, 60, 0.6);
     margin: auto;
+     color: #fff;
+     background-color: rgba(60, 60, 60, 0.6);
+     margin: auto;
     padding: 20px;
     align-items: center;
     margin-bottom: 20px;
@@ -236,6 +243,7 @@ nav {
 
 .form-heading{
     padding-top: 20%;
+    padding-bottom: 3%;
     font-family: 'Amatic SC', cursive;
     font-weight: 900;
     font-size: 5rem;
@@ -246,6 +254,11 @@ nav {
    font-weight: 900;
 }
 
+.signup:hover{
+    color: #f64a8a;
+}
+
+/*--Sign Up page--*/
 .signup-img{
     -webkit-box-align: center;
     -ms-flex-align: center;

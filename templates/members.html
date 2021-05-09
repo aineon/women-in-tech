@@ -9,7 +9,7 @@
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="card h-100 m-2 ">
                         <div class="row no-gutters">
-                                <img class="card-img-top img-fluid" src="{{ profile.image }}" alt="{{ profile.name }}">
+                             <img class="card-img-top img-fluid" src="{{ profile.image }}" alt="{{ profile.name }}">
                         </div>
                         <div class="card-body pb-0 pt-3 text-center">
                             <h5 class="profile-info">{{ profile.fullname }} <span class="text-muted">({{ profile.member_type }})</span></h5>
@@ -20,9 +20,9 @@
               
                             <a href="{{ url_for('profile_detail', profile_id=profile._id) }}" class="btn">View Profile</a>
                         </div>
-                   
                     </div>
-                </div>    
+                </div> 
+          
             {% if loop.index is divisibleby 1 %}
                 <div class="col-12 d-sm-none mb-4"> </div>
             {% endif %}                        
