@@ -22,13 +22,10 @@ app.secret_key = os.environ.get("SECRET_KEY")
 # app.config["SOCKETIO_SECRET_KEY"] = os.environ.get("SOCKETIO_SECRET_KEY")
 
 
-
 # socketio = SocketIO(app)
 
 
 mongo = PyMongo(app)
-
-date = date.today()
 
 
 date = date.today()

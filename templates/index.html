@@ -3,7 +3,7 @@
   {% block content %}
   
   
-  <img src="assets/images/collaborate.jpg" class="background-image" alt="background image">
+  <img src="/static/images/deliberating.jpg" class="background-image" alt="background image">
     
   <div class="container">
     <h1>Women In Tech</h1>
@@ -14,7 +14,7 @@
   <div class="container">
     <div class="card-deck">
       <div class="card">
-        <img src="assets/images/deliberating.jpg" class="card-img-top" alt="Deliberation">
+        <img src="/static/images/studying.jpg" class="card-img-top" alt="Deliberation">
           <div class="card-body">
            <h5 class="card-title">Mentorship</h5>
            <p class="card-text">A place where experienced Devs can share their hard work and experience
@@ -22,11 +22,11 @@
            </p>
          </div>
         <div class="card-footer">
-          <a href="members.html"><div class="btn btn-dark">Meet Them Here!</div></a>
+          <a href="{{ url_for('members') }}"><div class="btn btn-dark">Meet Them Here!</div></a>
         </div>
       </div>
       <div class="card">
-        <img src="assets/images/studying.jpg" class="card-img-top" alt="studying">
+        <img src="/static/images/collaborate.jpg" class="card-img-top" alt="studying">
           <div class="card-body">
            <h5 class="card-title">Collaboration</h5>
             <p class="card-text"> We have organized specific groups that will be dedicated to all needs.In these groups, we can come together to collaborate and inspire one
@@ -34,7 +34,7 @@
             </p>
          </div>
         <div class="card-footer">
-          <a href="register.html"><div class="btn btn-dark">See Our Groups</div></a>
+          <a href="{ url_for('registers') }}"><div class="btn btn-dark">See Our Groups</div></a>
         </div>
       </div>
     </div>

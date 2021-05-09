@@ -22,4 +22,5 @@
    "files.autoSave": "off",
    "workbench.colorTheme": "dark",
    "editor.defaultFormatter": "HookyQR.beautify",
+   "liveServer.settings.port": 5501,
 }

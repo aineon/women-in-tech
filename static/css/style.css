@@ -8,21 +8,35 @@
 /*--General--*/
 body {
     font-family: "Crafty Girls", sans-serif;
-    background: url(../images/collaborate.jpg) no-repeat center center;
+    background-color: white;
     background-size: cover;
   }
   
-  h1 {
-    font-family: "Crafty Girls", sans-serif;
-    margin: 15px auto;
-    text-align: center;
-    display: flex;
-    justify-content: center;
+  .background-image {
+      height: 100px;
+      width: 60px;
   }
 
+   .h1 {
+    font-family: "Crafty Girls", sans-serif;
+    color:#f64a8a;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 200px;
+    display: flex;
+    justify-content: center;
+    
+  } 
+
+ .card img {
+     height: 300px;
+     object-fit: cover;
+ }
 p{
    font-family: 'Crafty Girls', cursive;
 }
+
+
 /*--Buttons--*/
 .btn{
     border-color: black;
