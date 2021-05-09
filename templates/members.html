@@ -12,10 +12,10 @@
                                 <img class="card-img-top img-fluid" src="{{ profile.image }}" alt="{{ profile.name }}">
                         </div>
                         <div class="card-body pb-0 pt-3 text-center">
-                            <h5 class="card-title">{{ profile.fullname }} <span class="text-muted">({{ profile.member_type }})</span></h5>
-                            <p class="mb-0 card-text">Field: {{ profile.field }}
-                            <br class="card-text"> Experience: {{ profile.experience }}
-                            <br class="card-text"> Technologies: {{ profile.technologies }}
+                            <h5 class="profile-info">{{ profile.fullname }} <span class="text-muted">({{ profile.member_type }})</span></h5>
+                            <p><strong class="profile-info">Field:</strong> {{ profile.field }}
+                            <br><strong class="profile-info">Experience:</strong> {{ profile.experience }}
+                            <br><strong class="profile-info">Technologies:</strong> {{ profile.technologies }}
                             </p>
               
                             <a href="{{ url_for('profile_detail', profile_id=profile._id) }}" class="btn">View Profile</a>

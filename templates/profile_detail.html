@@ -2,38 +2,33 @@
 
 
 {% block content %}
+<div class="profile-container">
 <div class="row">
-    <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+    <div class="col-12 col-md-6 col-lg-4 offset-lg-2 mt-4">
         <div class="image-container">
             <img class="card-img-top img-fluid" src="{{ profile.image }}" alt="{{ profile.fullname }}">
         </div>
     </div>
     <div class="col-12 col-md-6 col-lg-4">
-        <div class="profile-details-container mb-5 mt-md-5">
-            <h3 class="mb-0 font-weight-bold text-center product-name">{{ profile.fullname }}</h3>
-            <span class="text-muted">({{ profile.member_type }})</span></h5>
-            <p class="mb-0">Field: {{ profile.field }}
-            <br> Experience: {{ profile.experience }}
-            <br> Technologies: {{ profile.technologies }}
-            <br> Goals: {{ profile.goals }}
-            <br> Interests: {{ profile.interests }}
-            <br> Github: {{ profile.github }}
-            <br><small><em>joined: {{ profile.date_created }}</em></small>
-            </p>   
+        <div class="profile-details-container mb-5 mt-5">
+            <h3 class="mb-0 font-weight-bold profile-info">{{ profile.fullname }}</h3>
+            <p class="small"><span class="text-muted">({{ profile.member_type }})</span></p>
+            <p class="mb-0"><strong class="profile-info">Field:</strong> {{ profile.field }}
+                <br><strong class="profile-info">Experience:</strong> {{ profile.experience }}
+                <br><strong class="profile-info">Technologies:</strong> {{ profile.technologies }}
+                <br><strong class="profile-info">Goals:</strong> {{ profile.goals }}
+                <br><strong class="profile-info">Interests:</strong> {{ profile.interests }}
+                <br><strong class="profile-info">Github:</strong>  {{ profile.github }}
+            <br><small><em class="profile-info">joined: {{ profile.date_created }}</em></small>
+            </p> 
         </div>
-        <div>
-            <form  method="POST" action="{{ url_for('add_connection', profile_id=profile._id) }}">
+            <form  method="POST" action="{{ url_for('add_connection', profile_id=profile._id) }}" class="w-50">
                 <button class="btn" id="connect" name="connect" type="submit">Connect</button>
             </form>
-            <a href="{{ url_for('members') }}" class="btn">Back to Members</a>
-        </div>
+            <a href="{{ url_for('members') }}" class="btn">Back to Members</a>       
         
-        <form method="POST">
-            <textarea cols="50" rows="4" name="message" id="message"></textarea>
-            <br>
-            <button>Send message</button>
-        </form>
-    </div>
+    <div>          
+</div>
 </div>
 
           
