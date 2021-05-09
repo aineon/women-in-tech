@@ -6,6 +6,10 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Crafty+Girls&display=swap');
 /*--General--*/
+body {
+    height: 100vh;
+}
+
 p{
    font-family: 'Crafty Girls', cursive;
 }
@@ -80,6 +84,11 @@ nav {
     transition: all 0.3s ease;
 }
 
+@media only screen and (max-width: 425px) {
+    .tablinks {
+        font-size: 1rem;
+    }
+}
 @media screen and (max-width: 1024px) {
     .nav-links {
         width: 60%;
@@ -142,6 +151,9 @@ nav {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 /*--Members cards--*/
+.members-container {
+    margin-top: 80px;
+}
 .card{
     box-shadow: 2px 8px 8px 2px grey;
     margin-top: 100px;
@@ -222,7 +234,7 @@ footer{
  /* Tabs */
  .tab-container {
     margin-bottom: 80px;
-    margin-top: 80px;
+    margin-top: 75px;
 }
 
 .tablinks {
@@ -233,11 +245,10 @@ footer{
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
-    font-size: 1rem;
-    width: 50%;
+    width: 33%;
     font-weight: 700;
-    /* -webkit-box-shadow: 0 -3px 5px #ffe3ec, 0 3px 5px #ffe3ec;
-            box-shadow: 0 -3px 5px #ffe3ec, 0 3px 5px #ffe3ec; */
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
 }
 
 .tabcontent {
@@ -277,3 +288,30 @@ footer{
     padding-bottom: .5rem;
     color: #f64a8a;
 }
+
+/* Chat App */
+.chat-heading,
+.chat,
+.chat-message,
+.chat-btn {
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+}
+
+.chat-heading {
+    margin-top: 80px;
+}
+
+.chat {
+    font-size: 1.5rem;
+    color: #f64a8a;
+}
+
+.chat-message {
+    font-size: 1.5rem;
+}
+
+.chat-date {
+    font-family: 'Amatic SC', cursive;
+}
+

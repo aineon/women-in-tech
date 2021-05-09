@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-12 text-center chat-heading">
+        <h2 class="mt-3">Welcome to Chat!</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 chat container text-center">
+        <form method="POST">
+            <textarea cols="50" rows="4" name="message" id="message"></textarea>
+            <br>
+            <button>Send message</button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 text-center my-3">
+        <button onClick="window.location.reload();" class="btn chat-btn text-uppercase">Refresh Chat</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 text-center">
+        {% for message in chat_messages %}
+            <p><span class="small chat-date">{{ message.timestamp }}</span> 
+            <br><stong class="chat">{{ message.from }}:</stong><span class="chat-message">{{ message.message }}</span>  
+            </p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
