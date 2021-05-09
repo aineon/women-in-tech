@@ -27,8 +27,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-date = date.today()
-
 
 date = date.today()
 
