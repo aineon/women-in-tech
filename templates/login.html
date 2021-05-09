@@ -2,7 +2,8 @@
 
 {% block content %}
   <section class="container-fluid bg-img">
-      <!-- Page Heading -->    
+      <!-- Page Heading --> 
+       
       <div class="row text-center">
           <div class="col-10 offset-1 col-md-6 offset-md-3">
             <h1 class="form-heading">Login</h1>  
@@ -10,7 +11,8 @@
         </div>
     
         <!-- Log In Form-->
-        <div class="row form-container">
+        <div class="form-container"> 
+        <div class="row">
             <form class="col-10 offset-1 col-md-6 offset-md-3" method="POST" action="{{ url_for('login') }}">
                 <div class="row">
                     <div class="form-group col-12 col-md-6 offset-md-3 text-center">
@@ -24,7 +26,7 @@
                 </div>
                 <div class="row text-center">
                     <div class="col-12 col-md-6 offset-md-3">
-                        <button type="submit" class="btn btn-small login-btn">
+                        <button type="submit" class="btn btn-small" id="login-btn">
                                 Log In
                         </button>
                         <p class="text-center account-login">
@@ -35,5 +37,6 @@
                 </div>
             </form>
         </div>
+      </div>
   </section>    
 {% endblock %}

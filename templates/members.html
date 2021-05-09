@@ -17,9 +17,9 @@
                         <div class="col-sm-8"></div>
                         <div class="card-body pb-0 pt-3 text-center">
                             <h5 class="card-title">{{ profile.name }} <span class="text-muted">({{ profile.profile_type }})</span></h5>
-                            <p class="mb-0">Field: {{ profile.field }}
-                            <br> Experience: {{ profile.experience }}
-                            <br> Technologies: {{ profile.technologies }}
+                            <p class="mb-0 card-text">Field: {{ profile.field }}
+                            <br class="card-text"> Experience: {{ profile.experience }}
+                            <br class="card-text"> Technologies: {{ profile.technologies }}
                             </p>
               
                         <a href="{{ url_for('profile_detail', profile_id=profile._id) }}" class="btn">View Profile</a>
