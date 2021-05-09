@@ -19,26 +19,132 @@ p{
     background-color: #ffe3ec;
 }
 /*--Navigation bar--*/
-button .navbar-toggler{
-    text-align: right;
-}
-/*--Navbar logo--*/
-.navbar-brand{
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height:  8.5vh;
+    background-color: #ffe3ec;
+    z-index: 9999; 
     font-family: 'Amatic SC', cursive;
-    font-size: 30px;
 }
-a{
-    font-family: 'Amatic SC', cursive;
-    color:black;
-    font-size: 25px;
-    font-weight: 700;
+
+.logo {
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: 900;
 }
-a:hover{
-    color: #f64a8a;
+
+.logo:hover{
+         color: white;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+     color: white !important; 
+}
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color:black;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #ffe3ec;;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+    }
+    
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+.nav-active {
+        transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 /*--Members cards--*/
 .card{
     box-shadow: 2px 8px 8px 2px grey;
+    margin-top: 100px;
     padding-bottom: 10px;
 }
 .card-body{

@@ -16,13 +16,19 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+
+# app.config['SECRET-KEY'] = "mysecret"
+
 # app.config["SOCKETIO_SECRET_KEY"] = os.environ.get("SOCKETIO_SECRET_KEY")
+
 
 
 # socketio = SocketIO(app)
 
 
 mongo = PyMongo(app)
+
+date = date.today()
 
 
 date = date.today()
@@ -116,6 +122,7 @@ def profile_detail(profile_id):
                            profile=profile)
 
 
+
 # Add profile form
 @app.route("/add_profile", methods=["GET", "POST"])
 def add_profile():
@@ -172,10 +179,24 @@ def update_profile(profile_id):
                            profiles=profiles)
 
 
+
 # Display members personal profile page
 @app.route("/my_profile/<username>", methods=["GET", "POST"])
 def my_profile(username):
     # grab the session user's username from db
+
+    # username = mongo.db.users.find_one(
+    #     {"username": session["user"]})["username"]
+    # if session["user"]:
+    #     my_profile = mongo.db.profiles.find(
+    #             {"created_by": session["user"]})
+    #     user = mongo.db.users.find_one({"username": session["user"]})  
+    return render_template("profile.html",
+                           username=username)
+                        #    user=user,
+                        #    profiles=my_profile)
+
+
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     if session["user"]:
@@ -184,6 +205,7 @@ def my_profile(username):
         user = mongo.db.users.find_one({"username": session["user"]})
     return render_template("profile.html", username=username,
                            user=user, profiles=my_profile)
+
 
 
 # Add another member as a connection
