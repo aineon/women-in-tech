@@ -6,6 +6,16 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Crafty+Girls&display=swap');
 /*--General--*/
+body {
+    font-family: "Laila", sans-serif;
+    background: url(../images/collaborate.jpg) no-repeat center center;
+    background-size: cover;
+  }
+  
+  h1 {
+    margin: 25px auto;
+    text-align: center;
+  }
 p{
    font-family: 'Crafty Girls', cursive;
 }
@@ -18,6 +28,7 @@ p{
     background-color: #f64a8a;
 }
 /*--Navigation bar--*/
+
 nav .bg-color-navbar{
     background-color: #ffe3ec;
 }
@@ -38,6 +49,13 @@ a{
 a:hover{
     color: #f64a8a;
 }
+
+/*--HomePage cards--*/
+.card-deck {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
 /*--Members cards--*/
 .card{
     box-shadow: 2px 8px 8px 2px grey;

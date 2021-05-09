@@ -20,33 +20,36 @@
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+    <nav class="navbar navbar-expand-lg navbar-light bg-color-navbar">
+        <a class="navbar-brand" href="">WITConnect
+            <img src="static/images/Logo-WitConnect.png" alt="WitConnect Logo" title="WitConnect Logo" width="40" height="40" class="d-inline-block">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
         aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span><i class="fas fa-bars"></i></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <a class="navbar-brand" href="index.html">WITConnect</a>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="members.html">Members</a>
+            <a class="nav-link" href="{{ url_for('members') }}">Members</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="my-profile.html">My Profile</a>
+            <a class="nav-link" href="#">My Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="sign-in.html">Sign In</a>
+            <a class="nav-link" href="{{ url_for('login') }}">Sign In</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="sign-out.html">Sign Out</a>
+            <a class="nav-link" href="#">Sign Out</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="signup.html">Sign Up</a>
+            <a class="nav-link" href="{{ url_for('register') }}">Sign Up</a>
           </li>
         </ul>
+      </div>
       </div>
     </nav>
   </header>
@@ -55,25 +58,35 @@
   {% block content %}
   {% endblock %}
   <!--Footer-->
-  <!-- Footer -->
-<footer>
-  <div class="footer-copyright">© 2021 Copyright:
-    <a href="index.html"> WitConnect.com</a>
-  </div>
-  <div class="social-container">
-    <ul>
-      <li class="social-icons">
-        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      </li>
-      <li class="social-icons">
-        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square"></i></a>
-      </li>
-      <li class="social-icons">
-        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </li>
-    </ul>
-  </div>
-</footer>
+  <footer>
+    <div class="container-fluid footer-container">
+        <div class="row">
+          <!--Social media icons-->
+          <div class="col-12" id="social-col">
+            <ul class="social-media-links">
+                <li class="list-inline-item mx-1">
+                    <a href="https://github.com/aineon/women-in-tech" target="_blank" rel="noopener noreferrer" aria-label="GitHub icon">
+                        <i class="fab fa-github-square active"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item mx-1">
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter icon">
+                        <i class="fab fa-twitter-square active"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item mx-1">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook icon">
+                        <i class="fab fa-facebook-square active"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item mx-1">
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram icon">
+                        <i class="fab fa-instagram-square active"></i>
+                    </a>
+                </li>
+            </ul>
+          </div>
+        </div>
         <!--Copyright-->
         <div class= row>
           <div class="col-12" id="copyright-col">
