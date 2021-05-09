@@ -24,6 +24,6 @@ function openTab(evt, tabName) {
   openProfileTabOnload();
   // Open first tab on page load
   function openProfileTabOnload()  {
-      document.getElementById("books").style.display = "block";
+      document.getElementById("profile").style.display = "block";
       document.getElementsByClassName("tablinks")[0].classList.add("active");
   }

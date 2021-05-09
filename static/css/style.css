@@ -218,3 +218,43 @@ footer{
 .fab:hover {
     color: #f64a8a;
 }
+
+ /* Tabs */
+ .tab-container {
+    margin-bottom: 80px;
+}
+
+.tablinks {
+    background-color: #b1b4b8;
+    color: #ee6aa7;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 1rem;
+    width: 50%;
+    font-weight: 700;
+    -webkit-box-shadow: 0 -3px 5px #c7cbcf, 0 3px 5px #c7cbcf;
+            box-shadow: 0 -3px 5px #c7cbcf, 0 3px 5px #c7cbcf;
+}
+
+.tabcontent {
+    display: none;
+    min-height: 80%;
+}
+
+.tab button {
+    background-color: #dee2e6;
+    color: #ee6aa7;
+}
+
+.tab button:hover {
+    background-color: #000;
+    color: #ee6aa7;
+}
+
+.tab button.active {
+    background-color: #ee6aa7;
+    color: #000;
+}
