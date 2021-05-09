@@ -71,6 +71,9 @@
                                     </p>
                       
                                     <a href="{{ url_for('profile_detail', profile_id=connection._id) }}" class="btn">View Profile</a>
+                                    <form  method="POST" action="{{ url_for('remove_connection', profile_id=connection._id) }}">
+                                        <button class="btn" id="remove{{loop.index}}" name="remove{{loop.index}}" type="submit"> Remove Connection</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>    

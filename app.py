@@ -217,6 +217,17 @@ def add_connection(profile_id):
         return redirect(url_for("members"))
 
 
+# Allows user to remove a connection 
+@app.route("/remove_connection/<profile_id>", methods=["GET", "POST"])
+def remove_connection(profile_id):
+    if request.method == "POST":
+        user = mongo.db.users.find_one({"username": session["user"].lower()})
+        mongo.db.users.update_one(user, {
+            "$pull": {"connections": ObjectId(profile_id)}})
+        flash("Connection removed! ")
+        return redirect(url_for("my_profile", username=session["user"]))
+
+
 # Logs user out of their account
 @app.route("/logout")
 def logout():
