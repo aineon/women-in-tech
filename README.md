@@ -41,7 +41,6 @@ The aim of this project is to give people who identify as women the chance to th
 
 - I want to get in touch with my mentor or mentee 
 
-
 ### Frequent visitor goals
 - I want to develop a professional relationship with other women coders.
 
