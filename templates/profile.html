@@ -27,7 +27,7 @@
                     <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                         <div class="profile-info-container mb-5 mt-md-5 profile-info">
                             <h3 class="mb-0 font-weight-bold text-center">{{ profile.fullname }} </h3>
-                            <span class="text-muted">({{ profile.member_type }})</span></h5>
+                            <span class="text-muted">({{ profile.member_type }})</span>
                             <p class="mb-0"><strong class="profile-info">Field:</strong> {{ profile.field }}
                             <br><strong class="profile-info">Experience:</strong> {{ profile.experience }}
                             <br><strong class="profile-info">Technologies:</strong> {{ profile.technologies }}
@@ -65,9 +65,9 @@
                                 </div>
                                 <div class="card-body pb-0 pt-3 text-center">
                                     <h5 class="card-title">{{ connection.fullname }} <span class="text-muted">({{ connection.member_type }})</span></h5>
-                                    <p class="mb-0 card-text">Field: {{ connection.field }}
-                                    <br class="card-text"> Experience: {{ connection.experience }}
-                                    <br class="card-text"> Technologies: {{ connection.technologies }}
+                                    <p class="mb-0 card-text"> <strong>Field: </strong>{{ connection.field }}
+                                    <br class="card-text"> <strong>Experience:</strong> {{ connection.experience }}
+                                    <br class="card-text"> <strong>Technologies: </strong>{{ connection.technologies }}
                                     </p>
                       
                                     <a href="{{ url_for('profile_detail', profile_id=connection._id) }}" class="btn">View Profile</a>
