@@ -38,13 +38,25 @@ The aim of this project is to give people who identify as women the chance to th
 - I want to register and create my profile page.
 
 ### Returning visitor goals
-- 
+- I want to be able to 
 
 ### Frequent visitor goals
 - I want to develop a professional relationship with other women coders.
 
 ## Site owner goals
 - As women and students we wish to create an inclusive environment for all coders.
+
+## Design 
+
+#### Fonts
+
+[Google Fonts](https://fonts.google.com/) was used in the making of Women-In-Tech. After reviewing various options. we decided to go with
+Amatic Sc for all our headings for its unique design. To follow that up, Crafty Girls cursive was used for paragraphs. 
+
+#### Icons
+The icons used here were found in the font awesome library. 
+
+#### Colors
 
 ## Wireframes 
 * [Homepage Wireframes](https://github.com/aineon/women-in-tech/blob/master/assets/home-page-Witconnect.png)
