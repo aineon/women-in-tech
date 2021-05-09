@@ -19,9 +19,6 @@ p{
     background-color: #ffe3ec;
 }
 /*--Navigation bar--*/
-nav .bg-color-navbar{
-    background-color: #ffe3ec;
-}
 button .navbar-toggler{
     text-align: right;
 }
@@ -46,6 +43,9 @@ a:hover{
 }
 .card-body{
     margin-bottom: 10px;
+}
+.card title .card text{
+    font-weight: 900;
 }
 .account-login{
     padding-top:10px;
