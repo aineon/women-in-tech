@@ -24,8 +24,6 @@ socketio = SocketIO(app, cors_allowed_origins='*')
 
 mongo = PyMongo(app)
 
-date = date.today()
-
 
 # Renders home page
 @app.route("/")

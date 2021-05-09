@@ -8,21 +8,49 @@
 /*--General--*/
 body {
     height: 100vh;
+    font-family: "Crafty Girls", sans-serif;
+    background-color: white;
+    background-size: cover;
+}
+  
+.background-image {
+      height: 100px;
+      width: 60px;
 }
 
-p{
+.h1 {
+    font-family: "Crafty Girls", sans-serif;
+    color:#f64a8a;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 200px;
+    display: flex;
+    justify-content: center; 
+} 
+
+ .card img {
+     height: 300px;
+     object-fit: cover;
+}
+
+p {
    font-family: 'Crafty Girls', cursive;
 }
+
+
 /*--Buttons--*/
 .btn{
     border-color: black;
     margin-top: 10px;
     background-color: #f64a8a;
 }
+
 .btn:hover{
     background-color: #ffe3ec;
 }
+
 /*--Navigation bar--*/
+
 nav {
     position: fixed;
     top: 0;
@@ -150,55 +178,87 @@ nav {
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
 }
+
+/*--HomePage cards--*/
+.card-deck {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
 /*--Members cards--*/
 .members-container {
     margin-top: 80px;
 }
+
 .card{
     box-shadow: 2px 8px 8px 2px grey;
     margin-top: 100px;
     padding-bottom: 10px;
 }
+
 .card-body{
     margin-bottom: 10px;
 }
+
 .card title .card text{
     font-weight: 900;
 }
 .account-login{
     padding-top:10px;
 }
+
 /*--Sign in page--*/
 .bg-img{
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background: url('../images/background-SignIn-page.jpg') no-repeat;
+    background: url('../images/signin.jpeg') no-repeat;
     background-size: cover;
-    height: 80vh;
+    height: 90vh;
     opacity: 0.7;
     overflow: hidden;
     width: 100%;
     z-index: -1;
 }
+
 .form-container{
     overflow: hidden;
     min-height: -webkit-fit-content;
     min-height: -moz-fit-content;
     min-height: fit-content;
-    z-index: 1;
+     color: #fff;
+     background-color: rgba(60, 60, 60, 0.6);
+     margin: auto;
+    width: 35%;
+    padding: 20px;
+    align-items: center;
 }
+
 .form-heading{
-    padding-top: 70px;
+    padding-top: 20%;
     font-family: 'Amatic SC', cursive;
     font-weight: 900;
+    font-size: 5rem;
+    color: white;
 }
-input{
-    box-shadow: 1px 1px 1px 1px grey;
-}
+
 .account-login{
-    font-weight: 900;
+   font-weight: 900;
 }
+
+.signup-img{
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: url('../images/signup.jpeg') no-repeat;
+    background-size: cover;
+    height: 90vh;
+    opacity: 0.7;
+    overflow: hidden;
+    width: 100%;
+    z-index: -1;
+}
+
 /*--Footer--*/
 footer{
     position: fixed;
@@ -207,26 +267,32 @@ footer{
         flex-shrink: 0;
     width: 100%;
 }
+
 .footer-container{
     background-color: #ffe3ec;
 }
+
 .footer-container p {
   text-align: center;
 }
+
 .social-links li i {
   justify-items: center;
 }
+
 #social-col{
     align-content: flex-center; 
         text-align: center; 
         -ms-flex-line-pack: center; 
 }
+
 /*--Social media icons--*/
 .fab{
     font-size: 30px;
     padding-top: 10px;
     color: black;
 }
+
 .fab:hover {
     color: #f64a8a;
 }
