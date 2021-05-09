@@ -7,29 +7,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Crafty+Girls&display=swap');
 /*--General--*/
 body {
+    height: 100vh;
     font-family: "Crafty Girls", sans-serif;
     flex: 1;
     background-color: white;
     background-size: cover;
-  }
+}
   
- 
-   .h1 {
+.background-image {
+      height: 100px;
+      width: 60px;
+}
+
+.h1 {
     font-family: "Crafty Girls", sans-serif;
     color:#f64a8a;
     margin: 15px auto;
     text-align: center;
     font-weight: 200px;
     display: flex;
-    justify-content: center;
-    
-  } 
+    justify-content: center; 
+} 
 
  .card img {
      height: 300px;
      object-fit: cover;
- }
-p{
+}
+
+p {
    font-family: 'Crafty Girls', cursive;
 }
 
@@ -40,9 +45,11 @@ p{
     margin-top: 10px;
     background-color: #f64a8a;
 }
+
 .btn:hover{
     background-color: #ffe3ec;
 }
+
 /*--Navigation bar--*/
 
 nav {
@@ -106,6 +113,11 @@ nav {
     transition: all 0.3s ease;
 }
 
+@media only screen and (max-width: 425px) {
+    .tablinks {
+        font-size: 1rem;
+    }
+}
 @media screen and (max-width: 1024px) {
     .nav-links {
         width: 60%;
@@ -178,20 +190,27 @@ nav {
 }
 
 /*--Members cards--*/
+.members-container {
+    margin-top: 80px;
+}
+
 .card{
     box-shadow: 2px 8px 8px 2px grey;
     margin-top: 100px;
     padding-bottom: 10px;
 }
+
 .card-body{
     margin-bottom: 10px;
 }
+
 .card title .card text{
     font-weight: 900;
 }
 .account-login{
     padding-top:10px;
 }
+
 /*--Sign in page--*/
 .bg-img{
     -webkit-box-align: center;
@@ -205,6 +224,7 @@ nav {
     width: 100%;
     z-index: -1;
 }
+
 .form-container{
     overflow: hidden;
     min-height: -webkit-fit-content;
@@ -217,6 +237,7 @@ nav {
     padding: 20px;
     align-items: center;
 }
+
 .form-heading{
     padding-top: 20%;
     padding-bottom: 3%;
@@ -226,8 +247,8 @@ nav {
     color: white;
 }
 
-.signup{
-    color: #000;
+.account-login{
+   font-weight: 900;
 }
 
 .signup:hover{
@@ -255,26 +276,32 @@ footer{
         flex-shrink: 0;
     width: 100%;
 }
+
 .footer-container{
     background-color: #ffe3ec;
 }
+
 .footer-container p {
   text-align: center;
 }
+
 .social-links li i {
   justify-items: center;
 }
+
 #social-col{
     align-content: flex-center; 
         text-align: center; 
         -ms-flex-line-pack: center; 
 }
+
 /*--Social media icons--*/
 .fab{
     font-size: 30px;
     padding-top: 10px;
     color: black;
 }
+
 .fab:hover {
     color: #f64a8a;
 }
@@ -282,7 +309,7 @@ footer{
  /* Tabs */
  .tab-container {
     margin-bottom: 80px;
-    margin-top: 80px;
+    margin-top: 75px;
 }
 
 .tablinks {
@@ -293,11 +320,10 @@ footer{
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
-    font-size: 1rem;
-    width: 50%;
+    width: 33%;
     font-weight: 700;
-    /* -webkit-box-shadow: 0 -3px 5px #ffe3ec, 0 3px 5px #ffe3ec;
-            box-shadow: 0 -3px 5px #ffe3ec, 0 3px 5px #ffe3ec; */
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
 }
 
 .tabcontent {
@@ -337,3 +363,30 @@ footer{
     padding-bottom: .5rem;
     color: #f64a8a;
 }
+
+/* Chat App */
+.chat-heading,
+.chat,
+.chat-message,
+.chat-btn {
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+}
+
+.chat-heading {
+    margin-top: 80px;
+}
+
+.chat {
+    font-size: 1.5rem;
+    color: #f64a8a;
+}
+
+.chat-message {
+    font-size: 1.5rem;
+}
+
+.chat-date {
+    font-family: 'Amatic SC', cursive;
+}
+

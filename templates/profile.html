@@ -7,6 +7,7 @@
             <div class="tab">
                 <button class="tablinks" onclick="openTab(event, 'profile')">My Profile</button>
                 <button class="tablinks" onclick="openTab(event, 'connections')">My Connections</button>
+                <button class="tablinks" onclick="openTab(event, 'chat')">Chat</button>
             </div>
         </div>
     </div>
@@ -55,7 +56,6 @@
     <div class="row">
         <div class="col-12">
             <div id="connections" class="tabcontent mb-3">
-                <h3>My Connections</h3>
                 {% if my_connections|length > 0 %}
                     {% for connection in my_connections %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
@@ -79,18 +79,32 @@
                         </div>    
                     {% endfor%}
                     {% else %}
-                    <div class="col-12 text-center">
+                    <div class="col-12 text-center mt-2">
                         <h3>You have not made any connections yet!</h3>
-                       
                         <a href="{{ url_for('members') }}" class="btn" type="submit">Make Connections!</a>
                     </div>
                 {% endif %}  
             </div>
         </div>
     </div>
-</div>
+
+   <div class="row">
+        <div class="col-12">
+            <div id="chat" class="tabcontent mb-3">
+               <div class="row">
+                   <div class="col-12 text-center mt-2">
+                       <h2>Wanna chat with other members?!</h2>
+                        <a href="{{ url_for('chat') }}" class="btn">Go to Chat!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
 {% endblock %}
 
 {% block scripts %}
+
 <script src="{{ url_for('static', filename='js/profile_script.js') }}"></script>
+
 {% endblock %}

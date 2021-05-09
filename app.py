@@ -1,5 +1,5 @@
 import os
-from datetime import date
+from datetime import date, datetime
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -16,19 +16,13 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
-
-# app.config['SECRET-KEY'] = "mysecret"
-
 # app.config["SOCKETIO_SECRET_KEY"] = os.environ.get("SOCKETIO_SECRET_KEY")
 
-
+socketio = SocketIO(app, cors_allowed_origins='*')
 # socketio = SocketIO(app)
 
 
 mongo = PyMongo(app)
-
-
-date = date.today()
 
 
 # Renders home page
@@ -215,15 +209,58 @@ def add_connection(profile_id):
         return redirect(url_for("members"))
 
 
-# Allows user to remove a connection 
+# Allows user to remove a connection
 @app.route("/remove_connection/<profile_id>", methods=["GET", "POST"])
 def remove_connection(profile_id):
     if request.method == "POST":
         user = mongo.db.users.find_one({"username": session["user"].lower()})
         mongo.db.users.update_one(user, {
             "$pull": {"connections": ObjectId(profile_id)}})
-        flash("Connection removed! ")
+        flash("Connection removed!")
         return redirect(url_for("my_profile", username=session["user"]))
+
+
+messages = []
+
+
+@app.route('/chat', methods=["GET", "POST"])
+def chat():
+    if request.method == "POST":
+        user = mongo.db.users.find_one({"username": session["user"].lower()})
+
+    if "user" in session:
+        return redirect(session["user"])
+    return render_template("chat.html")
+
+
+# Add message
+def add_messages(username, message):
+    """Add messages to the `messages` list"""
+    now = datetime.now().strftime("%H:%M %d %b %Y")
+    messages_dict = {"timestamp": now, "from": username, "message": message}
+
+    messages.append(messages_dict)
+
+
+# Display chat messages
+@app.route('/<username>', methods=["GET", "POST"])
+def user(username):
+    if request.method == "POST":
+        username = session["user"]
+        message = request.form["message"]
+        add_messages(username, message)
+        return redirect(session["user"])
+
+    return render_template("chat.html", username=username,
+                           chat_messages=messages)
+
+
+# Send message
+@app.route('/<username>/<message>')
+def send_message(username, message):
+    """Create a new message and redirect back to the chat page"""
+    add_messages(username, message)
+    return redirect('chat' + username)
 
 
 # Logs user out of their account
@@ -234,16 +271,6 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-
-# Message chat feature
-# @socketio.on('message')
-# def handleChat(msg):
-#     print("message" + msg)
-#     send(msg, broadcast=True)
-
-
-# if __name__ == "__main__":
-#     socketio.run(app)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

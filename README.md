@@ -61,9 +61,9 @@ The icons used here were found in the font awesome library.
 #### Colors
 
 ## Wireframes 
-* [Homepage Wireframes](https://github.com/aineon/women-in-tech/blob/master/assets/home-page-Witconnect.png)
-* [Members Page Wireframes](https://github.com/aineon/women-in-tech/blob/master/assets/members-page.png)
-* [Homepage Wireframes](https://github.com/aineon/women-in-tech/blob/master/assets/MyProfile.png)
+* [Homepage Wireframes](https://github.com/aineon/women-in-tech/blob/master/static/wireframes/landing-page-wireframe.pdf)
+* [Members Page Wireframes](https://github.com/aineon/women-in-tech/blob/master/static/wireframes/members-wireframe.pdf)
+* [My Profile Wireframes](https://github.com/aineon/women-in-tech/blob/master/static/wireframes/my-profile-wireframe.pdf)
 ## Features
 ### Existing Features
 - The navigation bar is fixed to the top of the page and brings the users to the different pages.
