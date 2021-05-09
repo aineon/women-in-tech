@@ -27,7 +27,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     min-height:  8.5vh;
-    background-color: #FFD9F2;
+    background-color: #ffe3ec;
     z-index: 9999; 
     font-family: 'Crafty Girls', cursive;
 }
@@ -96,7 +96,7 @@ nav {
         right: 0px;
         height: 92vh;
         top: 8vh;
-        background-color: #FFD9F2;;
+        background-color: #ffe3ec;;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -144,6 +144,7 @@ nav {
 /*--Members cards--*/
 .card{
     box-shadow: 2px 8px 8px 2px grey;
+    margin-top: 100px;
     padding-bottom: 10px;
 }
 .card-body{
