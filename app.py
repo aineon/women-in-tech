@@ -124,6 +124,7 @@ def add_profile():
         default_img = ("/static/images/profile_image.png")
         profile = {
             "member_type": request.form.get("member_type"),
+            "fullname": request.form.get("fullname"),
             "field": request.form.get("field"),
             "technologies": request.form.get("technologies"),
             "experience": request.form.get("experience"),
@@ -150,6 +151,7 @@ def update_profile(profile_id):
         default_img = ("/static/images/profile_image.png")
         update = {
             "member_type": request.form.get("member_type"),
+            "fullname": request.form.get("fullname"),
             "field": request.form.get("field"),
             "technologies": request.form.get("technologies"),
             "experience": request.form.get("experience"),
