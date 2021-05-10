@@ -61,6 +61,26 @@ label {
 }
 
 /*--Navigation bar--*/
+nav .bg-color-navbar{
+    background-color: #ffe3ec;
+}
+button .navbar-toggler{
+    text-align: right;
+}
+/*--Navbar logo--*/
+.navbar-brand{
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+}
+a{
+    font-family: 'Amatic SC', cursive;
+    color:black;
+    font-size: 25px;
+    font-weight: 700;
+}
+a:hover{
+    color: #f64a8a;
+}
 
 nav {
     position: fixed;
@@ -111,44 +131,6 @@ nav {
      color: white !important; 
 }
 
-.burger {
-    display: none;
-}
-
-.burger div {
-    width: 25px;
-    height: 3px;
-    background-color:black;
-    margin: 5px;
-    transition: all 0.3s ease;
-}
-
-.nav-active {
-        transform: translateX(0%);
-}
-
-@keyframes navLinkFade {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.toggle .line2 {
-    opacity: 0;
-}
-
-.toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
 
 /*Home Page*/
 #home {
