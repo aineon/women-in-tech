@@ -23,7 +23,6 @@
 
     <nav>
         <a class="logo" href="{{ url_for('index') }}"><img src="/static/images/w.png" alt="WitConnect Logo" title="WitConnect Logo" width="75" height="75" class="d-inline-block"> WITConnect</a>
-        
         <ul class="nav-links">
             <li><a href="{{ url_for('index') }}">Home</a></li>
             {% if session.user %}  
@@ -44,7 +43,7 @@
   </header>
 
 <!--Display Flash Messages-->
-<section> 
+<section class="flash-container"> 
   {% with messages = get_flashed_messages() %}
           {% if messages %}
               {% for message in messages %}

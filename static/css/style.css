@@ -10,8 +10,8 @@ body {
     height: 100vh;
     font-family: "Crafty Girls", sans-serif;
     flex: 1;
-    background-color: white;
-    background-size: cover;
+   /* background-color: white;
+    background-size: cover;*/
 }
   
 .background-image {
@@ -237,7 +237,7 @@ nav {
 
 .form-heading,
 .form-heading-signup {
-    padding-top: 20%;
+    padding-top: 20px;
     padding-bottom: 3%;
     font-family: 'Amatic SC', cursive;
     font-weight: 900;
@@ -367,9 +367,11 @@ footer{
 }
 
 /* Flash Messages */
-
-.flash .row {
-    background-color: #ffe3ec;
+.flash-container {
+    margin-top: 75px;
+}
+.flash.row {
+    background-color:#ffe3ec; 
     margin-bottom: 0;
 }
 
@@ -382,6 +384,7 @@ footer{
     padding-top: 1rem;
     padding-bottom: .5rem;
     color: #f64a8a;
+    z-index: 9999999;
 }
 
 /* Chat App */
