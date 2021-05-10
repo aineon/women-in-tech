@@ -121,11 +121,20 @@
             </div>
         </div>
     </div>
+    <!--Scroll to top button-->
+    <div class="scroll-btn hide">
+        <a class="scroll-link d-flex h-100 text-decoration-none" title="back to top" class="btn">
+            <i class="fas fa-angle-double-up mx-auto my-auto scroll-icon"></i>
+        </a>	
+    </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
 
+<script src="{{ url_for('static', filename='js/scroll_btn.js') }}"></script>
 <script src="{{ url_for('static', filename='js/profile_script.js') }}"></script>
 
 {% endblock %}
+
+

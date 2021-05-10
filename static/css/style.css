@@ -6,6 +6,11 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Crafty+Girls&display=swap');
 /*--General--*/
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
 body {
     height: 100vh;
     font-family: "Crafty Girls", sans-serif;
@@ -36,6 +41,13 @@ body {
 
 p {
    font-family: 'Crafty Girls', cursive;
+}
+
+label {
+    font-family: 'Amatic SC', cursive;
+    color: #f64a8a;
+    font-weight: 700;
+    font-size: 1.25rem;
 }
 
 /*--Buttons--*/
@@ -434,6 +446,36 @@ footer{
 
 .profile-info-container {
     font-size: 1.5rem;
+}
+
+/* Scroll Button */
+.scroll-btn {
+    height: 2.625rem;
+    width: 2.625rem;
+    position: fixed;
+    bottom: 1.75rem;
+    right: 1.75rem;
+    background-color: #f64a8a;
+    border-radius: 3px;    
+    font-size: 1.5rem; 
+    z-index: 99999999;
+}
+
+.scroll-btn:hover {
+    background-color: #000;
+    color: #f64a8a;
+}
+
+.scroll-link {
+    cursor: pointer;   
+}
+
+.scroll-icon {
+    color: #ffe3ec;
+}
+
+.scroll-icon:hover {
+    color: #f64a8a;
 }
 
 label {
