@@ -6,16 +6,22 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Crafty+Girls&display=swap');
 /*--General--*/
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Laila", sans-serif;
-  background: url(../images/boards.jpg) no-repeat center center;
-  background-size: cover;
+    height: 100vh;
+    font-family: "Crafty Girls", sans-serif;
+    flex: 1;
 }
 
 h1 {
@@ -25,31 +31,9 @@ h1 {
   color: #f64a8a;
 }
 
-
-/*--Homepage Cards--*/
-.typewriter h1 {
-  color: #f64a8a;
-  font-family: monospace;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 3.5s steps(30, end),
-    blink-caret .5s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #ffe3ec }
+.card img {
+     height: 300px;
+     object-fit: cover;
 }
 
 /*--Homepage Paragraph--*/
@@ -57,12 +41,19 @@ p {
    font-family: 'Crafty Girls', cursive;
 }
 
+label {
+    font-family: 'Amatic SC', cursive;
+    color: #f64a8a;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
 
 /*--Buttons--*/
 .btn{
     border-color: black;
     margin-top: 10px;
     background-color: #f64a8a;
+    font-weight: 700;
 }
 
 .btn:hover{
@@ -132,48 +123,7 @@ nav {
     transition: all 0.3s ease;
 }
 
-@media only screen and (max-width: 425px) {
-    .tablinks {
-        font-size: 1rem;
-    }
-    .form-container{
-        width: 70%;
-    }
-}
-@media screen and (max-width: 1024px) {
-    .nav-links {
-        width: 60%;
-    }
-}
 
-@media screen and (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-    }
-    
-    .nav-links {
-        position: fixed;
-        right: 0px;
-        height: 92vh;
-        top: 8vh;
-        background-color: #ffe3ec;;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 50%;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-    }
-    
-    .nav-links li {
-        opacity: 0;
-    }
-    
-    .burger {
-        display: block;
-        cursor: pointer;
-    }
-}
 
 .nav-active {
         transform: translateX(0%);
@@ -202,20 +152,45 @@ nav {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+/* Search bar */
+.search-container {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-bar {
+    margin-right: 0;
+    border: 2px solid #f64a8a;
+    border-right: transparent;
+}
+
+.search-bar.form-control {
+    border-radius: .25rem 0 0 .25rem;
+}
+
+.search-btn {
+    border-radius: 0 .25rem .25rem 0;
+    padding: 6px 10px;
+    border: 2px solid #f64a8a;
+    border-left: transparent;
+}
+
+input.form-control.search-bar {
+    width: 85%;
+}
+
 /*--HomePage cards--*/
 .card-deck {
     justify-content: flex-end;
     align-items: flex-end;
 }
+
 #homepage-cards{
     padding-bottom: 40px;
 }
 
 /*--Members cards--*/
-.members-container {
-    margin-top: 80px;
-}
-
 .card{
     box-shadow: 2px 8px 8px 2px grey;
     margin-top: 100px;
@@ -252,23 +227,31 @@ nav {
     min-height: -webkit-fit-content;
     min-height: -moz-fit-content;
     min-height: fit-content;
-     color: #fff;
-     background-color: rgba(60, 60, 60, 0.6);
-     margin: auto;
-    width: 30%;
+    color: #fff;
+    background-color: rgba(60, 60, 60, 0.6);
+    margin: auto;
     padding: 20px;
     align-items: center;
 }
 
-.form-heading{
-    padding-top: 10%;
+
+.form-heading,
+.form-heading-signup {
+    padding-top: 20px;
     padding-bottom: 3%;
     font-family: 'Amatic SC', cursive;
     font-weight: 900;
-    font-size: 5rem;
+    font-size: 5rem; 
+}
+/*
+.form-heading {
     color: white;
 }
 
+.form-heading-signup {
+    color: #f64a8a;
+}
+*/
 .account-login{
    font-weight: 900;
 }
@@ -288,7 +271,7 @@ nav {
     align-items: center;
     background: url('../images/signup.jpeg') no-repeat;
     background-size: cover;
-    height: 120vh;
+    height: 100vh;
     opacity: 0.7;
     overflow: hidden;
     width: 100%;
@@ -312,14 +295,22 @@ nav {
 
 .sign-up:hover{
     color: #ffe3ec;
+
+.form-link,
+.form-link:hover {
+    font-weight: bold;
+    text-decoration: none;
+    color: #f64a8a;
 }
 
 /*--Footer--*/
 footer{
+    right: 0;
     bottom: 0;
     -ms-flex-negative: 0;
         flex-shrink: 0;
     width: 100%;
+    padding-top: 80px;
 }
 
 .footer-container{
@@ -340,7 +331,8 @@ footer{
         -ms-flex-line-pack: center; 
 }
 
-/*--Social media icons--*/
+/*--Social media icons--
+*/
 .fab{
     font-size: 30px;
     padding-top: 10px;
@@ -355,6 +347,10 @@ footer{
  .tab-container {
     margin-bottom: 80px;
     margin-top: 75px;
+}
+
+.tab-bar {
+    padding-right: 0;
 }
 
 .tablinks {
@@ -392,9 +388,11 @@ footer{
 }
 
 /* Flash Messages */
-
+.flash-container {
+    margin-top: 75px;
+}
 .flash.row {
-    background-color: #ffe3ec;
+    background-color:#ffe3ec; 
     margin-bottom: 0;
 }
 
@@ -407,6 +405,7 @@ footer{
     padding-top: 1rem;
     padding-bottom: .5rem;
     color: #f64a8a;
+    z-index: 9999999;
 }
 
 /* Chat App */
@@ -434,4 +433,104 @@ footer{
 .chat-date {
     font-family: 'Amatic SC', cursive;
 }
+
+.profile-info {
+    color: #f64a8a;
+}
+
+.profile-container {
+    margin-top: 80px;
+}
+
+.profile-info-container {
+    font-size: 1.5rem;
+}
+
+/* Scroll Button */
+.scroll-btn {
+    height: 2.625rem;
+    width: 2.625rem;
+    position: fixed;
+    bottom: 1.75rem;
+    right: 1.75rem;
+    background-color: #f64a8a;
+    border-radius: 3px;    
+    font-size: 1.5rem; 
+    z-index: 99999999;
+}
+
+.scroll-btn:hover {
+    background-color: #000;
+    color: #f64a8a;
+}
+
+.scroll-link {
+    cursor: pointer;   
+}
+
+.scroll-icon {
+    color: #ffe3ec;
+}
+
+.scroll-icon:hover {
+    color: #f64a8a;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #ffe3ec;;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+    }
+    
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 664px) {
+    .tablinks {
+        font-size: 1rem;
+        padding: 3px;
+    }
+
+    .clear-btn-container {
+        margin-left: 60px;
+    }
+}
+
+  @media only screen and (max-width: 425px) {
+    .tablinks {
+        font-size: 1rem;
+    }
+    .form-container{
+        width: 70%;
+    }
+}
+
+
 

@@ -20,6 +20,9 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+date = date.today()
+
+
 # Renders home page
 @app.route("/")
 @app.route("/index")
@@ -213,6 +216,14 @@ def remove_connection(profile_id):
             "$pull": {"connections": ObjectId(profile_id)}})
         flash("Connection removed!")
         return redirect(url_for("my_profile", username=session["user"]))
+
+
+# Allows user to search all members in the db and returns the result
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    search = request.form.get("search")
+    profiles = list(mongo.db.profiles.find({"$text": {"$search": search}}))
+    return render_template("members.html", profiles=profiles)
 
 
 messages = []
