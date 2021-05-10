@@ -6,34 +6,53 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Crafty+Girls&display=swap');
 /*--General--*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-    height: 100vh;
-    font-family: "Crafty Girls", sans-serif;
-    flex: 1;
-    background-color: white;
-    background-size: cover;
-}
-  
-.background-image {
-      height: 100px;
-      width: 60px;
+  font-family: "Laila", sans-serif;
+  background: url(../images/boards.jpg) no-repeat center center;
+  background-size: cover;
 }
 
-.h1 {
-    font-family: "Crafty Girls", sans-serif;
-    color:#f64a8a;
-    margin: 15px auto;
-    text-align: center;
-    font-weight: 200px;
-    display: flex;
-    justify-content: center; 
-} 
-
- .card img {
-     height: 300px;
-     object-fit: cover;
+h1 {
+ margin-top: 5px;
+ padding-top: 5%;
+  text-align: center;
+  color: #f64a8a;
 }
 
+
+/*--Homepage Cards--*/
+.typewriter h1 {
+  color: #f64a8a;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #ffe3ec }
+}
+
+/*--Homepage Paragraph--*/
 p {
    font-family: 'Crafty Girls', cursive;
 }
@@ -281,7 +300,7 @@ nav {
 }
 
 .signin{
-    color: black;
+    color: white;
 }
 .signin:hover{
     color: #ffe3ec;
