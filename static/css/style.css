@@ -154,16 +154,16 @@ nav {
 #home {
     background: url("../images/heroimg.png") no-repeat center center fixed;
     display: table;
-    height: 80%;
+    height: 50%;
     position: relative;
     width: 100%;
     background-size: cover;
 }
-​
+
 .display-1{
     font-weight: 900;
     color: black;
-    padding-top: 10rem;
+    padding-top: 5rem;
 }
 ​
 .hometext{

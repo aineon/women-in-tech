@@ -52,15 +52,17 @@
             <label for="github">Github</label>
             <input type="url" class="form-control validate" id="github" name="github" value="{{ profile.github }}">
         </div>
-
+        
         <div class="form-group">
             <label for="image">Choose Image</label>
             <input type="file" class="form-control-file" id="image" name="image" value="{{ profile.image }}">
         </div>
+        
         <div class="text-center mb-4">
             <button class="btn" type="submit">Update Profile</button>
             <a href="{{ url_for('my_profile', username=session['user']) }}" class="btn">Cancel</a>
         </div>
     </form>
 </div>
+
 {% endblock %}
