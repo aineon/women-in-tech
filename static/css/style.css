@@ -150,6 +150,26 @@ nav {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+/*Home Page*/
+#home {
+    background: url("../images/heroimg.png") no-repeat center center fixed;
+    display: table;
+    height: 80%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+}
+​
+.display-1{
+    font-weight: 900;
+    color: black;
+    padding-top: 10rem;
+}
+​
+.hometext{
+    font-size: 1.5rem;
+}
+
 /* Search bar */
 .search-container {
     margin-top: 100px;
@@ -206,6 +226,10 @@ input.form-control.search-bar {
     padding-top:10px;
 }
 
+.results-heading {
+    font-size: 2.5rem;
+}
+
 /*--Sign in page--*/
 .bg-img{
     -webkit-box-align: center;
@@ -231,6 +255,7 @@ input.form-control.search-bar {
     padding: 20px;
     align-items: center;
     margin-bottom: 20px;
+    width: 80%;
 }
 
 .form-heading,
@@ -423,6 +448,7 @@ footer{
 
 .profile-info {
     color: #f64a8a;
+    font-weight: 700;
 }
 
 .profile-container {
