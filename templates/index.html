@@ -2,42 +2,46 @@
 
   {% block content %}
   
-    
-  <div class="typewriter">
-    <h1>Women In Tech</h1>
-    <p>Women supporting women as they advance in their coding journey through mentorship and collaboration.<br>
-     Together, Devs of all skill levels can combine their expertise to create amazing works of tech art.</p>
-</div>
-<!--Homepage Cards-->
-  <div class="container">
-    <div class="card-deck">
-      <div class="card">
-        <img src="/static/images/deliberating.jpg" class="card-img-top" alt="Deliberation">
-          <div class="card-body">
-           <h5 class="card-title">Mentorship</h5>
-           <p class="card-text">A place where experienced Devs can share their hard work and experience
-             while keeping their skills sharp.
-           </p>
-         </div>
-        <div class="card-footer">
-          <a href="members.html"><div class="btn btn-dark">Meet Them Here!</div></a>
+
+<!-- Hero-image -->
+    <div id="home">
+        <div class="landing-text text-center">
+            <h1 class="display-1">Women In Tech</h1>
+            <p class="hometext"><strong>Women supporting women as they advance in their coding journey through mentorship and collaboration.<br>
+     Together, Devs of all skill levels can combine their expertise to create amazing works of tech art.</strong></p>
         </div>
-      </div>
-      <div class="card">
-        <img src="/static/images/studying.jpg" class="card-img-top" alt="studying">
-          <div class="card-body">
-           <h5 class="card-title">Collaboration</h5>
-            <p class="card-text"> We have organized specific groups that will be dedicated to all needs.In these groups, we can come together to collaborate and inspire one
-            another through our projects.
-            </p>
-         </div>
-        <div class="card-footer">
-          <a href="register.html"><div class="btn btn-dark">See Our Groups</div></a>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
+
+<!--Homepage Cards-->
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 25rem;">
+            <img class="card-img-top" src="/static/images/deliberating.jpg" alt="Card image cap" alt="deliberating">
+                <div class="card-body">
+                    <h5 class="card-title">Mentoring</h5>
+                    <p class="card-text">A place where experienced devs can share their knowledge with up and coming coders.</p>
+                    <a href="{{ url_for('register') }}" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 25rem;">
+                <img class="card-img-top" src="/static/images/collaborate.jpg" alt="Card image cap" alt="collaborate">
+                <div class="card-body">
+                    <h5 class="card-title">Collaborate</h5>
+                    <p class="card-text">Organized, specific groups that are dedicated to fit all skill-level needs.</p>
+                    <a href="{{ url_for('login') }}" class="btn btn-primary">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
 {% endblock %}
+
  
 

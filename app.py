@@ -20,6 +20,9 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+date = date.today()
+
+
 # Renders home page
 @app.route("/")
 @app.route("/index")
